@@ -1,0 +1,10 @@
+.container {
+    background-image: url("../../img/FONDO.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100vh;
+    background-position: center;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+
+}
