@@ -7,13 +7,7 @@
     font-family: 'Courier New', Courier, monospace;
     display: flex;
 }
-.img {
-    display: flex;
-    height: auto;
-    width: auto;
-    left: 50px;
-    
-}
+
 
 .title {
     align-items: left;
@@ -54,3 +48,20 @@
     background-color: white;
     cursor: pointer;
 }
+
+.logo {
+display: flex;
+position: absolute;
+width: 25px;
+height: 25px;
+bottom: 20px;
+right: 20px;
+}
+
+.creador {
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    right: 70px;
+}
+

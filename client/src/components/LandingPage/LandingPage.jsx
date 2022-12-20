@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import style from "../LandingPage/LandingPage.module.css";
-import GLOBO from "../../img/GLOBO.png"
+import GLOBO from "../../img/GLOBO.png";
+import logo from "../../img/soyhenry.png";
 
 export default function LandingPage () {
     return (
         
         <div class= {style.container}>
 
-<img classname = {style.img} src={GLOBO} alt="GLOBO" />
+<img src={GLOBO} alt="GLOBO" />
 
 <h1 className = {style.title}>Bienvenidos a la App de Paises!</h1>
 
@@ -22,6 +23,9 @@ export default function LandingPage () {
 <Link to= {"/Home"}>
 <button className={style.button}>Ingresar</button>
 </Link>
+
+<h4 className= {style.creador}> Creado Por Matías Pineda</h4>
+<img className= {style.logo}  src={logo} alt="logo" />
         
         </div>
         
