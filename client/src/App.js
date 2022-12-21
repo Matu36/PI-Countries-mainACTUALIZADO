@@ -2,7 +2,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage/LandingPage";
 import Home from "./components/Home";
 import styled from "styled-components";
-import Form from "./components/Form";
+import Form from "./components/Form/Form";
 import Detail from "./components/Detail";
 //import NotFound from "./components/NotFound";
 

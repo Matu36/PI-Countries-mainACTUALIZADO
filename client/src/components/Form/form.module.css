@@ -1,0 +1,116 @@
+.container {
+    background-image: url(../../img/FONDO.jpg);
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+}
+
+.bbuton {
+    display:flex;
+    position:absolute;
+    top: 10px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+}
+
+.globo {
+    display: flex;
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    right: 200px;
+    top: 200px;
+}
+
+
+.country {
+    margin: 0.5rem 0;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.trash {
+    width: 1.5rem;
+    cursor: pointer;
+}
+
+
+.BackBtn {
+
+    color: var(--text-color);
+    font-size: 2.3rem;
+
+}
+.top {
+    display:flex
+}
+
+.content {
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 100px;
+  font-size: larger;
+}
+
+.label {
+    font-size: 1.2rem;
+  width: 100%;
+}
+
+.select {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    outline: none;
+    border: none;
+    background: #f0f0f0;
+    font-size: 1rem;
+    color: var(--background-color);
+    font-family: "Quicksand", sans-serif;
+    border-radius: 0.4rem;
+    width: 100%;
+}
+
+.input {
+
+    border: none;
+    outline: none;
+    border-radius: 0.4rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-family: "Quicksand", sans-serif;
+    width: 100%;
+}
+
+.Error {
+    color: #f86c7f;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+
+    
+.btn {
+    width: 100%;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.rinput {
+    margin: 0.5rem;
+}
+
+.radio {
+    width: 100%;
+  display: flex;
+  font-size: 1rem;
+  flex-direction: row;
+}

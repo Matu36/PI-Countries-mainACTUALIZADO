@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function Activity({ name, difficulty, duration, seasson }) {
+export default function Activity({ name, difficulty, duration, season }) {
   return (
     <Activities>
       <h2>{name}</h2>
@@ -15,7 +15,7 @@ export default function Activity({ name, difficulty, duration, seasson }) {
       </div>
       <div>
         <span>Temporada</span>
-        {seasson}
+        {season}
       </div>
     </Activities>
   );

@@ -2,30 +2,19 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import trash from "../img/trash.png";
+import trash from "../../img/trash.png"
 import { Link } from "react-router-dom";
 import {
   createActivity,
   getAllCountries,
   getAllActivity,
   orderCountries,
-} from "../actions";
+} from "../../actions/index";
+import style from "../Form/form.module.css"
+import bbuton from "../../img/BBUTTON.PNG";
+import Globo from "../../img/GLOBO.png"
 
-import { BackBtn } from "../styles/Detail";
-import {
-  FormContainer,
-  Country,
-  InputLabel,
-  Top,
-  Content,
-  Select,
-  InputText,
-  BtnForm,
-  Error,
-  Radio,
-} from "../styles/Form";
-
-import { validate } from "../utils/validation";
+import { validate } from "../../utils/validation";
 
 export default function Form() {
   const dispatch = useDispatch();
@@ -145,44 +134,43 @@ export default function Form() {
   };
 
   return (
-    <FormContainer onSubmit={handleOnSubmit}>
-      <Top>
-        <Link to="/home">
-          <BackBtn title="Regresar" secondary></BackBtn>
+    <form className= {style.container} onSubmit={handleOnSubmit}>
+      <Link to="/home">
+          <img className = {style.bbuton} src={bbuton} alt="ATRAS" />
         </Link>
-      </Top>
-      <Content>
+        <img className = {style.globo} src={Globo} alt="Globo" />
+      <div className= {style.content}>
         <h1>Actividad</h1>
         <div>
-          <InputLabel>
+          <label className= {style.label}>
             <p>País</p>
-            <Select name="countries" onChange={handleSelect}>
+            <select className= {style.select} name="countries" onChange={handleSelect}>
               <option value="">Seleccionar País</option>
               {countries.map((country, index) => (
                 <option key={index} value={country.name}>
                   {country.name}
                 </option>
               ))}
-            </Select>
-            {errors.countries && <Error>{errors.countries}</Error>}
+            </select>
+            {errors.countries && <div className= {style.Error}>{errors.countries}</div>}
             <div>
               {activity.countries.map((country, index) => (
-                <Country key={index}>
+                <div className= {style.country} key={index}>
                   {country}
-                  <img
+                  <img className= {style.trash}
                     src={trash}
                     alt="trash"
                     onClick={() => handleDelete(country)}
                   />
-                </Country>
+                </div>
               ))}
             </div>
-          </InputLabel>
+          </label>
         </div>
         <div>
-          <InputLabel>
+          <label className= {style.label}>
             <p>Nombre</p>
-            <InputText
+            <input className= {style.input}
               type="text"
               name="name"
               value={activity.name}
@@ -190,13 +178,13 @@ export default function Form() {
               placeholder="Nombre de actividad"
               onChange={handleOnChange}
             />
-            {errors.name && <Error>{errors.name}</Error>}
-          </InputLabel>
+            {errors.name && <div className={style.Error}>{errors.name}</div>}
+          </label>
         </div>
         <div>
-          <InputLabel>
+          <label className= {style.label}>
             <p>Duración</p>
-            <InputText
+            <input className= {style.input}
               type="number"
               name="duration"
               value={activity.duration}
@@ -205,16 +193,16 @@ export default function Form() {
               onChange={handleOnChange}
             />
 
-            {errors.duration && <Error>{errors.duration}</Error>}
-          </InputLabel>
+            {errors.duration && <div className = {style.Error}>{errors.duration}</div>}
+          </label>
         </div>
 
         <div>
-          <InputLabel>
+          <label className= {style.label}>
             <p>Dificultad</p>
-            <Radio>
+            <div className= {style.radio}>
               <div>
-                <input
+                <input className= {style.rinput}
                   type="radio"
                   name="difficulty"
                   value="1"
@@ -223,7 +211,7 @@ export default function Form() {
                 Muy fácil
               </div>
               <div>
-                <input
+                <input className= {style.rinput}
                   type="radio"
                   name="difficulty"
                   value="2"
@@ -232,7 +220,7 @@ export default function Form() {
                 Fácil
               </div>
               <div>
-                <input
+                <input className= {style.rinput}
                   type="radio"
                   name="difficulty"
                   value="3"
@@ -241,7 +229,7 @@ export default function Form() {
                 Medio
               </div>
               <div>
-                <input
+                <input className= {style.rinput}
                   type="radio"
                   name="difficulty"
                   value="4"
@@ -250,7 +238,7 @@ export default function Form() {
                 Difícil
               </div>
               <div>
-                <input
+                <input className= {style.rinput}
                   type="radio"
                   name="difficulty"
                   value="5"
@@ -258,16 +246,16 @@ export default function Form() {
                 />
                 Muy difícil
               </div>
-            </Radio>
-            {errors.difficulty && <Error>{errors.difficulty}</Error>}
-          </InputLabel>
+            </div>
+            {errors.difficulty && <div className={style.Error}>{errors.difficulty}</div>}
+          </label>
         </div>
         <div>
-          <InputLabel>
+          <label className= {style.label}>
             <p>Temporada</p>
-            <Radio>
+            <div className= {style.radio}>
               <div>
-                <input
+                <input className= {style.rinput}
                   type="radio"
                   name="seasson"
                   value="Verano"
@@ -276,7 +264,7 @@ export default function Form() {
                 Verano
               </div>
               <div>
-                <input
+                <input className= {style.rinput}t
                   type="radio"
                   name="seasson"
                   value="Otoño"
@@ -285,7 +273,7 @@ export default function Form() {
                 Otoño
               </div>
               <div>
-                <input
+                <input className= {style.rinput}
                   type="radio"
                   name="seasson"
                   value="Invierno"
@@ -294,7 +282,7 @@ export default function Form() {
                 Invierno
               </div>
               <div>
-                <input
+                <input className= {style.rinput}
                   type="radio"
                   name="seasson"
                   value="Primavera"
@@ -302,16 +290,16 @@ export default function Form() {
                 />
                 Primavera
               </div>
-            </Radio>
-            {errors.seasson && <Error>{errors.seasson}</Error>}
-          </InputLabel>
+            </div>
+            {errors.seasson && <div className={style.Error}>{errors.seasson}</div>}
+          </label>
         </div>
         <div>
-          <BtnForm type="submit" tertiary>
-            Guardar
-          </BtnForm>
+          <button className= {style.btn} type="submit" tertiary>
+            Crear Actividad
+          </button>
         </div>
-      </Content>
-    </FormContainer>
+      </div>
+    </form>
   );
 }
