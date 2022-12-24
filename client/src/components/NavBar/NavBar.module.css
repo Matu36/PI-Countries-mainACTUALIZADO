@@ -1,0 +1,31 @@
+.Nav {
+    display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.h2 {
+
+    font-size: 1.6rem;
+    color: wheat;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.button {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: none;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.3s;
+  color: #fffffe;
+}

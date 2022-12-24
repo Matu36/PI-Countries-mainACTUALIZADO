@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { FaFilter } from "react-icons/fa";
-import { IoReload } from "react-icons/io5";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import style from "../Home/Home.module.css";
 import {
   getAllCountries,
   filterCountryByContinent,
@@ -10,16 +9,14 @@ import {
   filterCountryByActivity,
   getAllActivity,
   setCurrentPage,
-} from "../../src/actions";
-import Country from "./Country";
-import Paged from "./Paged";
-import Filters from "./Filters";
-import { Button } from "../styles/Button";
-import NavBar from "./NavBar";
-import Loader from "./Loader";
-import SearchBar from "./SearchBar";
-import noResults from "../img/noResults.svg"
-import { ContainerHome, Countries, Btns, NoResult } from "../styles/Home";
+} from "../../actions/index";
+import Country from "../Country/Country";
+import Paged from "../Paged/Paged";
+import Filters from "../Filters/Filters";
+import NavBar from "../NavBar/NavBar";
+import Loader from "../Loader/Loader";
+import SearchBar from "../SearchBar/SearchBar.jsx"
+import noResults from "../../img/noResults.svg";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -80,18 +77,18 @@ export default function Home() {
   };
 
   return (
-    <ContainerHome>
+    <div className= {style.container}>
       <NavBar handleClick={handleClick} />
       <SearchBar />
-      <Btns>
-        <Button title="Filtros" primary onClick={() => setFilters(!filters)}>
-          <FaFilter /> <span>Filters</span>
-        </Button>
-        <Button secondary onClick={handleClick}>
-          <IoReload />
+      <div>
+        <button className= {style.buttonsf} title="Filtros" 
+        primary onClick={() => setFilters(!filters)}>
+        <span>Filtros</span>
+        </button>
+        <button className= {style.buttonsc} secondary onClick={handleClick}>
           <span>Cargar Paises</span>
-        </Button>
-      </Btns>
+        </button>
+      </div>
       {filters && (
         <Filters
           activities={allActivity}
@@ -102,7 +99,7 @@ export default function Home() {
         />
       )}
       <Paged countriesPerPage={countriesPerPage} />
-      <Countries>
+      <div className= {style.countries}>
         {loader ? (
           <Loader />
         ) : (
@@ -116,13 +113,13 @@ export default function Home() {
                 continent={country.continent}
               />
             ))) || (
-            <NoResult>
+            <div className= {style.noResults}>
               <img src={noResults} alt="no Results" />
               <h2>No se encontraron resultados</h2>
-            </NoResult>
+            </div>
           )
         )}
-      </Countries>
-    </ContainerHome>
+      </div>
+    </div>
   );
 }

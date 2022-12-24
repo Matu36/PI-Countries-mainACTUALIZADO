@@ -1,0 +1,19 @@
+.h32 {
+    margin: 0.3rem 0;
+    width: 100%;
+}
+
+.spane {
+    color: #fff2ee;
+    font-size: 1rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.dive {
+    background-image: url("../../img/FONDO.jpg");
+    margin: 0.4rem 0;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid var(--border-color);
+}

@@ -1,10 +1,10 @@
 import { BrowserRouter, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage/LandingPage";
-import Home from "./components/Home";
+import Home from "./components/Home/Home";
 import styled from "styled-components";
 import Form from "./components/Form/Form";
-import Detail from "./components/Detail";
-//import NotFound from "./components/NotFound";
+import Detail from "./components/Detail/Detail";
+//import NotFound from "./components/notFound/NotFound";
 
 
 export default function App() {

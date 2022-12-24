@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Search, IconSearch } from "../styles/SearchBar";
-import { getAllCountries } from "../../src/actions";
+import { IconSearch } from "../SearchBar/SearchBar";
+import { getAllCountries } from "../../actions/index";
+import style from "../SearchBar/SearchBar.module.css"
 
 export default function SearchBar() {
   const [search, setSearch] = useState("");
@@ -27,16 +28,16 @@ export default function SearchBar() {
   return (
   
     <div>
-      <Search onSubmit={handleOnClick}>
+      <form className = {style.form} onSubmit={handleOnClick}>
         <IconSearch onClick={handleOnClick} />
-        <input
+        <input className= {style.input}
           type="text"
           placeholder="Buscar País"
           onChange={handleOnChange}
           value={search}
           autoComplete="off"
         />
-      </Search>
+      </form>
     </div>
   );
 }

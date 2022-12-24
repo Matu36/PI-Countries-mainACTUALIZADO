@@ -1,18 +1,21 @@
-import styled from "styled-components";
+.container {
+    display: none;
+}
 
-export const ContainerPage = styled.div`
-  display: none;
-
-  @media (min-width: 1000px) {
+@media (min-width: 1000px) 
+{.container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
     margin: 1rem 0;
+}}
 
-    span {
-      backdrop-filter: blur(16px) saturate(180%);
-      background-color: rgba(17, 25, 40, 0.75);
+
+
+.spancontain {
+    backdrop-filter: blur(16px) saturate(180%);
+      background-color: wheat;
       font-weight: bold;
       color: var(--text-color);
       display: flex;
@@ -26,17 +29,12 @@ export const ContainerPage = styled.div`
       height: 2rem;
       text-decoration: none;
       cursor: pointer;
-    }
 
-    span:hover {
-      background-color: #ff8906;
-      color: #fff;
-    }
-  }
-`;
+}
 
-export const PrevNext = styled.div`
-  display: flex;
+
+.pn {
+    display: flex;
   justify-content: center;
   align-items: center;
   margin: 1rem auto;
@@ -44,21 +42,19 @@ export const PrevNext = styled.div`
   background-color: rgba(17, 25, 40, 0.75);
   padding: 0.4rem;
   border-radius: 1rem;
-  span {
+}
+
+.spanpn {
     text-align: center;
     font-size: 1.2rem;
     font-weight: bold;
     color: var(--text-color);
     width: 100%;
-  }
-  @media (min-width: 1000px) {
-    display: none;
-  }
-`;
+}
 
-export const BtnPaged = styled.button`
-  backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(17, 25, 40, 0.75);
+.button {
+    backdrop-filter: blur(16px) saturate(180%);
+  background-color: wheat;
   color: var(--text-color);
   display: flex;
   justify-content: center;
@@ -71,13 +67,10 @@ export const BtnPaged = styled.button`
   height: 2rem;
   border-style: hidden;
   cursor: pointer;
+}
 
-  :hover {
+.button:hover {
     background-color: #ff8906;
     color: #fff;
-  }
+}
 
-  :disabled {
-    background-color: #ffb35c;
-  }
-`;

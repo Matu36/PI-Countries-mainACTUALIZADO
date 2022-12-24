@@ -12,13 +12,32 @@ import {
 } from "../../actions/index";
 import style from "../Form/form.module.css"
 import bbuton from "../../img/BBUTTON.PNG";
-import Globo from "../../img/GLOBO.png"
+import Globo from "../../img/TOURIST.PNG";
 
-import { validate } from "../../utils/validation";
+const validate = (activity, activities = []) => {
+  let errors = {};
+  //trim son los caracteres sin contenido; espacios en blanco.
+  if (!activity.name.trim()) {
+    errors.name = "Campo obligatorio";
+  } else if (!/^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]+$/.test(activity.name)) {
+    errors.name = "El nombre de la actividad debe contener solo letras";
+  } else if (activities.includes(activity.name.trim())) {
+    errors.name = "Actividad existente";
+  }
+  if (!activity.difficulty) errors.difficulty = "Campo obligatorio";
+  if (!activity.duration) errors.duration = "Campo obligatorio";
+  if (parseInt(activity.duration) < 1 || parseInt(activity.duration) > 30)
+    errors.duration = "La duración debe ser mayor a 0 y menor que 30";
+  if (!activity.seasson) errors.seasson = "Campo obligatorio";
+  if (activity.countries.length === 0)
+    errors.countries = "Campo obligatorio";
+
+  return errors;
+};
 
 export default function Form() {
   const dispatch = useDispatch();
-  const navigate = useHistory();
+  const history = useHistory();
   const { countries, allActivity } = useSelector((state) => state);
 
   const [errors, setErrors] = useState({});
@@ -127,7 +146,7 @@ export default function Form() {
         seasson: "",
         countries: [],
       });
-      navigate("/home");
+      history.push("/home");
     } else {
       alert("Por favor, complete los campos o revise los errores");
     }
@@ -138,9 +157,9 @@ export default function Form() {
       <Link to="/home">
           <img className = {style.bbuton} src={bbuton} alt="ATRAS" />
         </Link>
-        <img className = {style.globo} src={Globo} alt="Globo" />
+        <img className = {style.globo}src={Globo} alt="Globo" />
       <div className= {style.content}>
-        <h1>Actividad</h1>
+        <h1>Actividad turística</h1>
         <div>
           <label className= {style.label}>
             <p>País</p>
@@ -189,7 +208,7 @@ export default function Form() {
               name="duration"
               value={activity.duration}
               autoComplete="off"
-              placeholder="Duración en días"
+              placeholder=" en días"
               onChange={handleOnChange}
             />
 
@@ -208,7 +227,7 @@ export default function Form() {
                   value="1"
                   onChange={handleCheck}
                 />
-                Muy fácil
+                Muy baja
               </div>
               <div>
                 <input className= {style.rinput}
@@ -217,7 +236,7 @@ export default function Form() {
                   value="2"
                   onChange={handleCheck}
                 />
-                Fácil
+                baja
               </div>
               <div>
                 <input className= {style.rinput}
@@ -226,7 +245,7 @@ export default function Form() {
                   value="3"
                   onChange={handleCheck}
                 />
-                Medio
+                Media
               </div>
               <div>
                 <input className= {style.rinput}
@@ -235,7 +254,7 @@ export default function Form() {
                   value="4"
                   onChange={handleCheck}
                 />
-                Difícil
+                alta
               </div>
               <div>
                 <input className= {style.rinput}
@@ -244,7 +263,7 @@ export default function Form() {
                   value="5"
                   onChange={handleCheck}
                 />
-                Muy difícil
+                Muy alta
               </div>
             </div>
             {errors.difficulty && <div className={style.Error}>{errors.difficulty}</div>}

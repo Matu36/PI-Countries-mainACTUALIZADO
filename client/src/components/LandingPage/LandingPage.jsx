@@ -11,7 +11,7 @@ export default function LandingPage () {
 
 <img src={GLOBO} alt="GLOBO" />
 
-<h1 className = {style.title}>Bienvenidos a la App de Paises!</h1>
+<h2 className = {style.title}>Bienvenidos a la App de Paises!</h2>
 
 
 

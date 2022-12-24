@@ -1,9 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setCurrentPage } from "../actions";
-import { ContainerPage, PrevNext, BtnPaged } from "../styles/Paged";
+import { setCurrentPage } from "../../actions";
+import style from "../Paged/Paged.module.css";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { BiFirstPage, BiLastPage } from "react-icons/bi";
+
 
 export default function Paged({ countriesPerPage }) {
   const dispatch = useDispatch();
@@ -22,39 +23,39 @@ export default function Paged({ countriesPerPage }) {
   }
 
   return (
-    <div>
+    <div className= {style.pn}>
       {pageCountries.length > 1 && (
-        <PrevNext>
-          <BtnPaged onClick={() => changePage(1)} disabled={page === 1}>
+        <div className= {style.pn}>
+          <button className= {style.button} onClick={() => changePage(1)} disabled={page === 1}>
             <BiFirstPage />
-          </BtnPaged>
-          <BtnPaged onClick={() => changePage(page - 1)} disabled={page === 1}>
+          </button>
+          <button className= {style.button} onClick={() => changePage(page - 1)} disabled={page === 1}>
             <IoIosArrowBack />
-          </BtnPaged>
-          <span>
+          </button>
+          <span className= {style.spanpn}>
             Página {page} de {pageCountries.length}
           </span>
-          <BtnPaged
+          <button className= {style.button}
             onClick={() => changePage(page + 1)}
             disabled={page >= pageCountries.length}
           >
             <IoIosArrowForward />
-          </BtnPaged>
-          <BtnPaged
+          </button>
+          <button className= {style.button}
             onClick={() => changePage(pageCountries.length)}
             disabled={page >= pageCountries.length}
           >
             <BiLastPage />
-          </BtnPaged>
-        </PrevNext>
+          </button>
+        </div>
       )}
-      <ContainerPage>
+      <div className= {style.container}>
         {pageCountries?.map((page) => (
-          <span onClick={() => changePage(page)} key={page}>
+          <span className = {style.spancontain} onClick={() => changePage(page)} key={page}>
             {page}
           </span>
         ))}
-      </ContainerPage>
+      </div>
     </div>
   );
 }

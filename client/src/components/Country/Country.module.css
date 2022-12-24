@@ -1,0 +1,33 @@
+.countrys {
+    width: 285px;
+  backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 1rem;
+  transition: all 0.3s 0s ease;
+}
+
+.flags {
+    width: 50%;
+    height: 80px;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.h222 {
+    margin-bottom: 0.5rem;
+}
+
+.data {
+  margin-top: 0;
+  padding: 1rem;
+  border-radius: 0 0 1rem 1rem;
+  height: 150px;
+}
+
+.par {
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+.spa {
+    font-weight: bold;
+}

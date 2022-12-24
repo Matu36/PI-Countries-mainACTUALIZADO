@@ -1,4 +1,4 @@
-import { Filter } from "../styles/Filters";
+import style from "../Filters/Filters.module.css"
 export default function Filters({
   activities,
   handleOrdered,
@@ -6,8 +6,8 @@ export default function Filters({
   handleFilterActivity,
 }) {
   return (
-    <Filter>
-      <select onChange={handleFilterContinent}>
+    <div className= {style.containerr}>
+      <select className = {style.select }onChange={handleFilterContinent}>
         <option value="All">All</option>
         <option value="Asia">Asia</option>
         <option value="South America">South America</option>
@@ -17,7 +17,7 @@ export default function Filters({
         <option value="Africa">Africa</option>
         <option value="Europe">Europe</option>
       </select>
-      <select onChange={handleOrdered}>
+      <select className = {style.select }onChange={handleOrdered}>
         <option value="">Seleccione orden</option>
         <option value="Asc">Nombre Asc</option>
         <option value="Desc">Nombre Desc</option>
@@ -25,7 +25,7 @@ export default function Filters({
         <option value="Max">Población Desc</option>
       </select>
 
-      <select onChange={handleFilterActivity}>
+      <select className = {style.select }onChange={handleFilterActivity}>
         <option value="All">Todas</option>
         {activities?.map((activity, index) => (
           <option key={index} value={activity.name}>
@@ -33,6 +33,6 @@ export default function Filters({
           </option>
         ))}
       </select>
-    </Filter>
+    </div>
   );
 }

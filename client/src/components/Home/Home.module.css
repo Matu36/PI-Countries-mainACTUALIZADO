@@ -1,0 +1,63 @@
+.container {
+    background-image: url("../../img/FONDO.jpg");
+    padding: 1rem;
+    min-height: 100vh;
+
+}
+
+.buttonsc {
+    display: flex;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size:25px;
+    font-family:Verdana,Helvetica;
+    font-weight:bold;
+    color:white;
+    background:#638cb5;
+    border: 1px;
+    width:135px;
+    height:40px;
+}
+
+.buttonsc:hover {
+    color: #638cb5;
+    background-color: white;
+    cursor: pointer;
+}
+
+.buttonsf {
+    display: flex;
+    justify-content: space-between;
+    font-size:25px;
+    font-family:Verdana,Helvetica;
+    font-weight:bold;
+    color:white;
+    background:#638cb5;
+    border: 1px;
+    width:135px;
+    height:40px;
+}
+
+.buttonsf:hover {
+    color: #638cb5;
+    background-color: white;
+    cursor: pointer;
+}
+
+.countries {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    padding: 1rem 0;
+}
+
+
+.noResults {
+    border-radius: 1rem;
+  backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
