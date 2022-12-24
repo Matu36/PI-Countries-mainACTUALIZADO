@@ -31,15 +31,15 @@
     position: absolute;
     bottom:250px;
     right:280px;
-    size: 100px;
-    font-size:25px;
+    font-size:35px;
         font-family:Verdana,Helvetica;
         font-weight:bold;
-        color:white;
+        color:wheat;
         background:#638cb5;
         border: 1px;
-        width:135px;
-        height:40px;
+        width:190px;
+        height:50px;
+        border-radius: 25%;
 
 }
 

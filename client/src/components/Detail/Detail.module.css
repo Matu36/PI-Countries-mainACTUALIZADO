@@ -71,3 +71,10 @@
     margin: 0;
     font-weight: bold;
 }
+
+.sCircles {
+  display: flex;
+  position: absolute;
+  top: 200px;
+  left:500px;
+}

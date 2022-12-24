@@ -14,9 +14,9 @@ import Country from "../Country/Country";
 import Paged from "../Paged/Paged";
 import Filters from "../Filters/Filters";
 import NavBar from "../NavBar/NavBar";
-import Loader from "../Loader/Loader";
 import SearchBar from "../SearchBar/SearchBar.jsx"
 import noResults from "../../img/noResults.svg";
+import {SpinningCircles } from 'react-loading-icons';
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -101,7 +101,7 @@ export default function Home() {
       <Paged countriesPerPage={countriesPerPage} />
       <div className= {style.countries}>
         {loader ? (
-          <Loader />
+          <SpinningCircles className= {style.sCircles}/>
         ) : (
           (countries.length > 0 &&
             currentCountries?.map((country, index) => (

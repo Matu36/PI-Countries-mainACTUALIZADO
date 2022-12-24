@@ -2,8 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setCurrentPage } from "../../actions";
 import style from "../Paged/Paged.module.css";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { BiFirstPage, BiLastPage } from "react-icons/bi";
+import { FiArrowLeft, FiArrowRight, FiChevronsLeft, FiChevronsRight } from "react-icons/fi";
 
 
 export default function Paged({ countriesPerPage }) {
@@ -27,10 +26,10 @@ export default function Paged({ countriesPerPage }) {
       {pageCountries.length > 1 && (
         <div className= {style.pn}>
           <button className= {style.button} onClick={() => changePage(1)} disabled={page === 1}>
-            <BiFirstPage />
+            <FiChevronsLeft />
           </button>
           <button className= {style.button} onClick={() => changePage(page - 1)} disabled={page === 1}>
-            <IoIosArrowBack />
+            <FiArrowLeft />
           </button>
           <span className= {style.spanpn}>
             Página {page} de {pageCountries.length}
@@ -39,13 +38,13 @@ export default function Paged({ countriesPerPage }) {
             onClick={() => changePage(page + 1)}
             disabled={page >= pageCountries.length}
           >
-            <IoIosArrowForward />
+            <FiArrowRight />
           </button>
           <button className= {style.button}
             onClick={() => changePage(pageCountries.length)}
             disabled={page >= pageCountries.length}
           >
-            <BiLastPage />
+            <FiChevronsRight />
           </button>
         </div>
       )}

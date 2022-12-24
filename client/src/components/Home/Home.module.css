@@ -13,11 +13,12 @@
     font-size:25px;
     font-family:Verdana,Helvetica;
     font-weight:bold;
-    color:white;
+    color:wheat;
     background:#638cb5;
     border: 1px;
     width:135px;
-    height:40px;
+    height:70px;
+    border-radius: 25%;
 }
 
 .buttonsc:hover {
@@ -27,16 +28,18 @@
 }
 
 .buttonsf {
+    margin-left: 0px;
     display: flex;
     justify-content: space-between;
     font-size:25px;
     font-family:Verdana,Helvetica;
     font-weight:bold;
-    color:white;
+    color:wheat;
     background:#638cb5;
     border: 1px;
-    width:135px;
+    width:100px;
     height:40px;
+    border-radius: 25%;
 }
 
 .buttonsf:hover {
@@ -60,4 +63,11 @@
   background-color: rgba(17, 25, 40, 0.75);
   padding: 1.5rem 1rem;
   text-align: center;
+}
+
+.sCircles {
+    display: flex;
+  position: absolute;
+  top: 25px;
+  left:500px;
 }

@@ -2,10 +2,10 @@
   background-color: var(--text-color);
   display: flex;
   align-items: center;
-  padding: 0.3rem 0.5rem;
+  padding: 0.5rem 0.2rem;
   margin: 1rem 0;
-  font-size: 1.2em;
-  height: 2.5rem;
+  font-size: 0.7em;
+  height: 1.5rem;
   border-radius: 0.75rem;
 }
 
@@ -13,7 +13,7 @@
     border: none;
     outline: none;
     margin-right: 0.5rem;
-    width: 100%;
+    width: 80%;
     height: 100%;
     border-radius: 0.75rem;
     padding: 7px 10px;
@@ -21,4 +21,12 @@
     font-family: "Quicksand", sans-serif;
   }
   
+  .FcSearch {
+    margin: 0 0.5rem;
+   size: 30px;
+  }
+
+  .FcSearch:hover {
+    cursor: pointer;
+  }
 

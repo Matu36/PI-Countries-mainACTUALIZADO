@@ -1,7 +1,6 @@
 import React from "react";
 import style from "../NavBar/NavBar.module.css";
 import { Link } from "react-router-dom";
-import { IoMdCreate } from "react-icons/io";
 
 
 export default function NavBar() {
@@ -13,7 +12,6 @@ export default function NavBar() {
       <div>
         <Link className = {style.link} to="/create">
           <button className= {style.button} title="Crear Actividad" tertiary>
-            <IoMdCreate />
             <span>Crear Actividad</span>
           </button>
         </Link>

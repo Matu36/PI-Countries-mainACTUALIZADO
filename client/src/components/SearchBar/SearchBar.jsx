@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { IconSearch } from "../SearchBar/SearchBar";
+import { FcSearch } from "react-icons/fc";
 import { getAllCountries } from "../../actions/index";
 import style from "../SearchBar/SearchBar.module.css"
 
@@ -29,7 +29,7 @@ export default function SearchBar() {
   
     <div>
       <form className = {style.form} onSubmit={handleOnClick}>
-        <IconSearch onClick={handleOnClick} />
+        <FcSearch className= {style.FcSearch} onClick={handleOnClick} />
         <input className= {style.input}
           type="text"
           placeholder="Buscar País"

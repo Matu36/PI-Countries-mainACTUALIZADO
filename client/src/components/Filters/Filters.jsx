@@ -8,7 +8,7 @@ export default function Filters({
   return (
     <div className= {style.containerr}>
       <select className = {style.select }onChange={handleFilterContinent}>
-        <option value="All">All</option>
+        <option value="All">Continentes</option>
         <option value="Asia">Asia</option>
         <option value="South America">South America</option>
         <option value="North America">North America</option>
@@ -26,7 +26,7 @@ export default function Filters({
       </select>
 
       <select className = {style.select }onChange={handleFilterActivity}>
-        <option value="All">Todas</option>
+        <option value="All">Actividades</option>
         {activities?.map((activity, index) => (
           <option key={index} value={activity.name}>
             {activity.name}

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Activity from "../Activity/Activity";
 import { Link, useParams } from "react-router-dom";
 import { getCountryById } from "../../actions/index";
-import Loader from "../Loader/Loader";
+import {SpinningCircles   } from 'react-loading-icons';
 import style from "../Detail/Detail.module.css";
 import BACK from "../../img/BBUTTON.PNG";
 
@@ -27,7 +27,7 @@ export default function Detail() {
   return (
     <div className= {style.container}>
       {loader ? (
-        <Loader />
+        <SpinningCircles  className= {style.sCircles} />
       ) : (
         country?.name && (
           <div>
