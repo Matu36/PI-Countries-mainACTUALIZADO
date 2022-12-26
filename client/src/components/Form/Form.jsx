@@ -277,7 +277,7 @@ export default function Form() {
                 <input className= {style.rinput}
                   type="radio"
                   name="seasson"
-                  value="Verano"
+                  value="summer"
                   onChange={handleCheck}
                 />
                 Verano
@@ -286,7 +286,7 @@ export default function Form() {
                 <input className= {style.rinput}t
                   type="radio"
                   name="seasson"
-                  value="Otoño"
+                  value="autumn"
                   onChange={handleCheck}
                 />
                 Otoño
@@ -295,7 +295,7 @@ export default function Form() {
                 <input className= {style.rinput}
                   type="radio"
                   name="seasson"
-                  value="Invierno"
+                  value="winter"
                   onChange={handleCheck}
                 />
                 Invierno
@@ -304,7 +304,7 @@ export default function Form() {
                 <input className= {style.rinput}
                   type="radio"
                   name="seasson"
-                  value="Primavera"
+                  value="spring"
                   onChange={handleCheck}
                 />
                 Primavera
