@@ -15,7 +15,7 @@ import Paged from "../Paged/Paged";
 import Filters from "../Filters/Filters";
 import NavBar from "../NavBar/NavBar";
 import SearchBar from "../SearchBar/SearchBar.jsx"
-import noResults from "../../img/noResults.svg";
+import PageNotFound from "../../img/PageNotFound.jpg";
 import {SpinningCircles } from 'react-loading-icons';
 
 export default function Home() {
@@ -113,8 +113,8 @@ export default function Home() {
                 continent={country.continent}
               />
             ))) || (
-            <div className= {style.noResults}>
-              <img src={noResults} alt="no Results" />
+              <div className= {style.notFound}>
+              <img src={PageNotFound} alt="no Results" />
               <h2>No se encontraron resultados</h2>
             </div>
           )

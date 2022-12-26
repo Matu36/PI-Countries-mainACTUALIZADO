@@ -1,44 +1,59 @@
-.countrys {
+.Countrys {
     width: 100px;
   backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(17, 25, 40, 0.75);
-  border-radius: 1rem;
+  background-color: lightblue;
   transition: all 0.3s 0s ease;
+  border-radius:50%;
+-webkit-border-radius:50%;
+box-shadow: 0px 0px 15px 15px #ec731e;
+-webkit-box-shadow: 0px 0px 15px 15px #ec731e;
+transform: rotate(360deg);
+-webkit-transform: rotate(360deg);
 }
 
 .flags {
-    margin-left: 10%;
+    margin-left: 15%;
     width: 70px;
-    height: 70pxpx;
-    border-radius: 1rem 1rem 0 0;
+    height: 50px;
+    margin-top: 10%;
+  
 }
 
 .flags:hover {
-    transform: translate(0, -10px);
+  border-radius:50%;
+  -webkit-border-radius:50%;
+  box-shadow: 0px 0px 15px 15px lightblue;
+  -webkit-box-shadow: 0px 0px 15px 15px lightblue;
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
   }
 
 .h222 {
-    margin-bottom: 0.5rem;
-    font-size: 20px;
-    font-weight: bolder;
+    margin-left: 15%;
+    font-size: 12px;
+    font-weight:bold;
+    margin-top: 0px;
 }
 
 .data {
   margin-top: 0;
-  padding: 0.5rem;
+  padding: 0.2rem;
   border-radius: 0 0 1rem 1rem;
   height: 100px;
 }
 
 .par {
-    font-size: 1.1rem;
+    font-size: small;
     font-weight: normal;
-    text-decoration: none;
+    margin-left: 15%;;
 }
 
 .spa {
     font-weight: bold;
     text-decoration: none;
+    font-size: small;
+    margin-left: 0%;
+    margin-top: 0%;
 }
 
 .link {

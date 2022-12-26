@@ -52,15 +52,16 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 0.8rem;
-    padding: 1rem 0;
+    gap:0.2rem;
+    padding: 0.5rem 0;
 }
 
 
-.noResults {
+.notFound {
+    
     border-radius: 1rem;
   backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(17, 25, 40, 0.75);
+  background-color:wheat;
   padding: 1.5rem 1rem;
   text-align: center;
 }
@@ -71,3 +72,4 @@
   top: 25px;
   left:500px;
 }
+

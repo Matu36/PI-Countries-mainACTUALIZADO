@@ -1,7 +1,7 @@
 import { BrowserRouter, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage/LandingPage";
 import Home from "./components/Home/Home";
-import styled from "styled-components";
+
 import Form from "./components/Form/Form";
 import Detail from "./components/Detail/Detail";
 //import NotFound from "./components/notFound/NotFound";
@@ -9,22 +9,15 @@ import Detail from "./components/Detail/Detail";
 
 export default function App() {
   return (
-    <ContentWrapper>
-    <BrowserRouter>
-      
+    
+        <BrowserRouter>
         <Route exact path= {"/"} component = {LandingPage} />
         <Route exact path={"/home"} component ={Home} />
         <Route path={"/home/detail/:id"} component={Detail } />
         <Route path={"/create"} component={Form} />
-        
-      
-    </BrowserRouter>
-  </ContentWrapper>
+        </BrowserRouter>
+  
 );
 }
 
-const ContentWrapper = styled.div`
-  min-height: 100vh;
-  max-width: 1200px;
-  margin: auto;
-`;
+
