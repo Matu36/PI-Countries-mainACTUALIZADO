@@ -32,6 +32,11 @@
 
 }
 
+.spancontain:hover {
+    background-color: #ff8906;
+    color: #fff;
+}
+
 
 .pn {
     display: flex;

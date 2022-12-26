@@ -159,7 +159,7 @@ export default function Form() {
         </Link>
         <img className = {style.globo}src={Globo} alt="Globo" />
       <div className= {style.content}>
-        <h1>Actividad turística</h1>
+        <h1 className= {style.h1}> Actividad turística</h1>
         <div>
           <label className= {style.label}>
             <p>País</p>

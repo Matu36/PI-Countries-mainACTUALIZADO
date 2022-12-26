@@ -43,25 +43,25 @@ export default function Detail() {
             <hr />
             <div className= {style.content}>
               <div className= {style.info}>
-                <h1 className= {style.names}> Detalle</h1>
+                <h1 className= {style.names}> Características</h1>
                 <hr />
                 <div>
-                  <span className= {style.span}>Continente</span> {country.continent}
+                  <span className= {style.span}>Continente: </span> {country.continent}
                 </div>
                 <div>
-                  <span className={style.span}>Capital</span>
+                  <span className={style.span}>Capital: </span>
                   {country.capital}
                 </div>
                 <div>
-                  <span className={style.span}>Subregion</span>
+                  <span className={style.span}>Subregion: </span>
                   {country.subregion}
                 </div>
                 <div>
-                  <span className= {style.span}>Área</span>
+                  <span className= {style.span}>Área: </span>
                   {country.area?.toLocaleString()} km²
                 </div>
                 <div>
-                  <span className= {style.span}>Habitantes</span>
+                  <span className= {style.span}>Habitantes: </span>
                   {country.population?.toLocaleString()}
                 </div>
               </div>

@@ -32,7 +32,7 @@ export default function Paged({ countriesPerPage }) {
             <FiArrowLeft />
           </button>
           <span className= {style.spanpn}>
-            Página {page} de {pageCountries.length}
+            Página {page} 
           </span>
           <button className= {style.button}
             onClick={() => changePage(page + 1)}

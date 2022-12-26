@@ -40,20 +40,20 @@
   backdrop-filter: blur(10px);
   border-radius: 1rem;
   width: 100%;
-  padding: 1.3rem;
+  padding: 3.5rem;
   border-right: 1px solid var(--border-color);
 }
 
 .act {
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3);
   backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(17, 25, 40, 0.75);
+  background-color: wheat;
   border-radius: 1rem;
   width: 100%;
-  padding: 1.3rem;
+  padding: 3.5rem;
 }
 
-.Adiv {
+.adiv {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
@@ -66,8 +66,8 @@
 }
 
 .span {
-    color: #fff2ee;
-    font-size: 1rem;
+    color: black;
+    font-size: 1.5rem;
     margin: 0;
     font-weight: bold;
 }
