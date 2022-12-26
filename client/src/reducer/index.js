@@ -6,6 +6,7 @@ import {
   SET_CURRENT_PAGE,
   ORDER_COUNTRIES,
   GET_ALL_ACTIVITY,
+  CREATE_ACTIVITY,
 } from "../actions/types";
 
 const initialState = {
@@ -32,6 +33,10 @@ function rootReducer(state = initialState, { type, payload }) {
         ...state,
         country: payload,
       };
+      case CREATE_ACTIVITY:
+        return {
+          ...state,
+        };
     case GET_ALL_ACTIVITY:
       return {
         ...state,

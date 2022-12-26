@@ -33,7 +33,7 @@
 }
 
 .spancontain:hover {
-    background-color: #ff8906;
+    background-color: lightcoral;
     color: #fff;
 }
 
@@ -75,7 +75,7 @@
 }
 
 .button:hover {
-    background-color: #ff8906;
+    background-color: lightcoral;
     color: #fff;
 }
 

@@ -44,7 +44,7 @@ export const getCountryById = (id) => {
 
 export const getAllActivity = () => {
   return (dispatch) => {
-    axios.get(`http://localhost:3001/tourist`).then((response) => {
+    axios.get(`http://localhost:3001/activities`).then((response) => {
       return dispatch({
         type: GET_ALL_ACTIVITY,
         payload: response.data,
@@ -56,7 +56,7 @@ export const getAllActivity = () => {
 export const createActivity = (activity) => {
   return async (dispatch) => {
     try {
-      await axios.post(`http://localhost:3001//activities`, activity);
+      await axios.post(`http://localhost:3001/activity`, activity);
       return dispatch({
         type: CREATE_ACTIVITY,
       });
