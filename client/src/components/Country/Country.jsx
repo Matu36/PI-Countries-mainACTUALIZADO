@@ -9,7 +9,7 @@ export default function Country({ id, name, flags, continent }) {
         <div className= {style.data}>
           <h2 className= {style.h222}>{name}</h2>
           <p className= {style.par}>
-            <span className= {style.spa}>Continente</span> : {continent} <br />
+            <span className= {style.spa}>Continente: </span>{continent} <br />
           </p>
         </div>
       </Link>

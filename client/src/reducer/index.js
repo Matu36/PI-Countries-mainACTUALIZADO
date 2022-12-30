@@ -10,13 +10,11 @@ import {
 } from "../actions/types";
 
 const initialState = {
-  //array modificado
-  countries: [],
-  //copia de todos los paises
-  allCountries: [],
-  country: [],
-  allActivity: [],
-  page: 1,
+  countries: [],          // => array que se va modificando
+  allCountries: [],       // => Todos los paises
+  country: [],            // => Pais por id
+  allActivity: [],        // => Todas las actividades
+  page: 1,                // => Pagina actual
 };
 
 function rootReducer(state = initialState, { type, payload }) {
@@ -43,20 +41,22 @@ function rootReducer(state = initialState, { type, payload }) {
         allActivity: payload,
       };
     case FILTER_BY_CONTINENT:
-      const allCountries = state.allCountries;
+      const allCountries = state.allCountries;  // => Todos los paises
       const continentFilter =
-        payload === "All"
+        payload === "All"    // => Si el payload es "All" => Todos los paises
           ? allCountries
-          : allCountries.filter((country) => country.continent === payload);
-      return {
+          : allCountries.filter((country) => 
+          country.continent === payload);   // => Si el payload es 
+                                            //"America" => Filtrar por America;
+        return {
         ...state,
-        countries: continentFilter,
+        countries: continentFilter,           // => array que se va modificando
       };
 
     case FILTER_BY_ACTIVITY:
-      const allCountriesActivity = state.allCountries;
+      const allCountriesActivity = state.allCountries;   // => traigo Todos los paises
       const activityFilter =
-        payload === "All"
+        payload === "All"            // => si el payload es "All" => todas las actividades
           ? allCountriesActivity.filter(
               (country) => country.activities.length > 0
             )
@@ -79,18 +79,14 @@ function rootReducer(state = initialState, { type, payload }) {
 
       payload === "Asc" &&
         ordered.sort((a, b) => {
-          // if (a.name < b.name) return -1;
-          // if (a.name > b.name) return 1;
-          // return 0;
-          //ordenando caracteres no ASCII
-          //localeCompare() return (-1, 0, 1)
-          return a.name.localeCompare(b.name);
+        return a.name.localeCompare(b.name);  // => Ordena alfabeticamente
+                                              // => LocaleCompare compara dos cadenas
         });
-      payload === "Desc" &&
+      payload === "Desc" &&                   
         ordered.sort((a, b) => {
           return b.name.localeCompare(a.name);
         });
-      payload === "Max" &&
+      payload === "Max" &&                       // => Ordena por poblacion
         ordered.sort((a, b) => {
           return b.population - a.population;
         });

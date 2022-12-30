@@ -8,14 +8,14 @@ export default function Filters({
   return (
     <div className= {style.containerr}>
       <select className = {style.select }onChange={handleFilterContinent}>
-        <option value="All">Continentes</option>
+        <option value="All">Todos los Continentes</option>
         <option value="Asia">Asia</option>
-        <option value="South America">South America</option>
-        <option value="North America">North America</option>
+        <option value="South America">Sudamérica</option>
+        <option value="North America">NorteAmérica</option>
         <option value="Oceania">Ocenia</option>
         <option value="Antarctica">Antarctica</option>
         <option value="Africa">Africa</option>
-        <option value="Europe">Europe</option>
+        <option value="Europe">Europa</option>
       </select>
       <select className = {style.select }onChange={handleOrdered}>
         <option value="">Seleccione orden</option>

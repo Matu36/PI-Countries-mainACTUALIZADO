@@ -10,26 +10,26 @@ import BACK from "../../img/BBUTTON.PNG";
 
 
 export default function Detail() {
-  const { id } = useParams();
+  const { id } = useParams();         // devuelve un objeto con los parametros de la url
   const dispatch = useDispatch();
-  const { country } = useSelector((state) => state);
-  const [loader, setLoader] = useState(true);
+  const { country } = useSelector((state) => state);  // obtengo datos del estado global
+  const [loader, setLoader] = useState(true);         // en esta caso del Id del pais.
   useEffect(() => {
     setLoader(true);
     dispatch(getCountryById(id));
-    const timer = setTimeout(() => {
+    const timer = setTimeout(() => {   // timer para que se use el loader
       setLoader(false);
     }, 1000);
 
-    return () => clearTimeout(timer);
-  }, [dispatch, id]);
+    return () => clearTimeout(timer);  // cancela el timer
+  }, [dispatch, id]);                  // se ejecuta cuando cambia el dispatch o el id
 
   return (
     <div className= {style.container}>
       {loader ? (
         <SpinningCircles  className= {style.sCircles} />
       ) : (
-        country?.name && (
+        country?.name && (                   // si existe el nombre del pais se ejecuta
           <div>
             <div className= {style.top}>
               <Link to="/home">
@@ -62,7 +62,7 @@ export default function Detail() {
                 </div>
                 <div>
                   <span className= {style.span}>Habitantes: </span>
-                  {country.population?.toLocaleString()}
+                  {country.population?.toLocaleString()}  
                 </div>
               </div>
               <div className= {style.act}>
@@ -99,3 +99,6 @@ export default function Detail() {
     </div>
   );
 }
+
+
+//toLocaleString => convierte un numero en un string con separadores de miles

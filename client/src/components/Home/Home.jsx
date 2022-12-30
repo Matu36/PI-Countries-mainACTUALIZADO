@@ -20,17 +20,17 @@ import {SpinningCircles } from 'react-loading-icons';
 
 export default function Home() {
   const dispatch = useDispatch();
-  const { countries, page, allActivity } = useSelector((state) => state);
+  const { countries, page, allActivity } = useSelector((state) => state); 
   const [loader, setLoader] = useState(true);
   const [filters, setFilters] = useState(false);
   const [, setOrder] = useState();
   let countriesPerPage = 10;
-  const indexOfLastCountry = page * countriesPerPage - 1; // 1 * 10 -1 = 9 | 2 * 10 -1 = 19 | 3 * 10 -1 = 29
+  const indexOfLastCountry = page * countriesPerPage - 1; // 1 * 10 - 1 = 9
   const indexOfFirstCountry =
     page === 1
-      ? indexOfLastCountry - (countriesPerPage - 1)
+      ? indexOfLastCountry - (countriesPerPage - 1)  // 9 - (10-1) = 0
       : indexOfLastCountry - countriesPerPage; // 9 - (10-1) = 0 | 19 - 10 = 9 | 29 - 10 = 19
-  const currentCountries = countries.slice(
+  const currentCountries = countries.slice(          // [0,1,2,3,4,5,6,7,8,9]
     indexOfFirstCountry,
     indexOfLastCountry
   );

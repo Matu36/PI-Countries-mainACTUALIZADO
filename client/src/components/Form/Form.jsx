@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom"; 
 import trash from "../../img/trash.png"
 import { Link } from "react-router-dom";
 import {
@@ -26,7 +26,7 @@ const validate = (activity, activities = []) => {
   }
   if (!activity.difficulty) errors.difficulty = "Campo obligatorio";
   if (!activity.duration) errors.duration = "Campo obligatorio";
-  if (parseInt(activity.duration) < 1 || parseInt(activity.duration) > 30)
+  if (parseInt(activity.duration) < 1 || parseInt(activity.duration) > 30) // convierte string en numero
     errors.duration = "La duración debe ser mayor a 0 y menor que 30";
   if (!activity.seasson) errors.seasson = "Campo obligatorio";
   if (activity.countries.length === 0)
@@ -60,8 +60,8 @@ export default function Form() {
     countries: [],
   });
 
-  const arrActivities = allActivity.map((x) => x.name);
-
+  const arrActivities = allActivity.map((x) => x.name); // array de actividades por nombre
+                                                        // para validar que no se repitan
   const handleOnChange = (e) => {
     setActivity({
       ...activity,
@@ -69,7 +69,7 @@ export default function Form() {
     });
 
     setErrors(
-      validate({ ...activity, [e.target.name]: e.target.value }, arrActivities)
+      validate({ ...activity, [e.target.name]: e.target.value }, arrActivities) 
     );
   };
 
@@ -79,22 +79,22 @@ export default function Form() {
     } else {
       setActivity({
         ...activity,
-        countries: [...activity.countries, e.target.value],
+        countries: [...activity.countries, e.target.value], // agrega el pais al array
       });
 
       setErrors(
         validate(
           {
             ...activity,
-            countries: [...activity.countries, e.target.value],
+            countries: [...activity.countries, e.target.value], 
           },
-          arrActivities
+          arrActivities   
         )
       );
     }
   };
   const handleCheck = (e) => {
-    if (e.target.checked) {
+    if (e.target.checked) {    // si esta seleccionado lo agrega al array
       setActivity({
         ...activity,
         [e.target.name]: e.target.value,
@@ -104,9 +104,9 @@ export default function Form() {
       validate(
         {
           ...activity,
-          [e.target.name]: e.target.value,
+          [e.target.name]: e.target.value,  // si no esta seleccionado lo elimina del array
         },
-        arrActivities
+        arrActivities            // array de actividades para validar que no se repitan
       )
     );
   };
@@ -114,13 +114,13 @@ export default function Form() {
   const handleDelete = (country) => {
     setActivity({
       ...activity,
-      countries: activity.countries.filter((ctry) => ctry !== country),
+      countries: activity.countries.filter((ctry) => ctry !== country),  // elimina el pais del array
     });
     setErrors(
       validate(
         {
           ...activity,
-          countries: activity.countries.filter((ctry) => ctry !== country),
+          countries: activity.countries.filter((ctry) => ctry !== country), 
         },
         arrActivities
       )
@@ -135,9 +135,9 @@ export default function Form() {
       activity.duration &&
       activity.seasson &&
       activity.countries.length &&
-      !Object.keys(errors).length
+      !Object.keys(errors).length  // si no hay errores
     ) {
-      dispatch(createActivity(activity));
+      dispatch(createActivity(activity));    // crea la actividad
       alert("Actividad creada");
       setActivity({
         name: "",
@@ -146,7 +146,7 @@ export default function Form() {
         seasson: "",
         countries: [],
       });
-      history.push("/home");
+      history.push("/home");   //redirecciona a home si se crea la actividad
     } else {
       alert("Por favor, complete los campos o revise los errores");
     }
@@ -277,7 +277,7 @@ export default function Form() {
                 <input className= {style.rinput}
                   type="radio"
                   name="seasson"
-                  value="summer"
+                  value="Verano"
                   onChange={handleCheck}
                 />
                 Verano
@@ -286,7 +286,7 @@ export default function Form() {
                 <input className= {style.rinput}t
                   type="radio"
                   name="seasson"
-                  value="autumn"
+                  value="Otoño"
                   onChange={handleCheck}
                 />
                 Otoño
@@ -295,7 +295,7 @@ export default function Form() {
                 <input className= {style.rinput}
                   type="radio"
                   name="seasson"
-                  value="winter"
+                  value="Invierno"
                   onChange={handleCheck}
                 />
                 Invierno
@@ -304,7 +304,7 @@ export default function Form() {
                 <input className= {style.rinput}
                   type="radio"
                   name="seasson"
-                  value="spring"
+                  value="Primavera"
                   onChange={handleCheck}
                 />
                 Primavera
