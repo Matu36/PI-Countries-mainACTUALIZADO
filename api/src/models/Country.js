@@ -5,9 +5,9 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('country', {
     id: {
-      type: DataTypes.STRING(3),
-      allowNull: false,
-      primaryKey: true
+      type: DataTypes.STRING(3),  
+      allowNull: false,  // No puede ser nulo el campo
+      primaryKey: true  //  Id que se autoincrementa
     },
     name: {
       type: DataTypes.STRING,
@@ -29,12 +29,12 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
     },
     area: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.FLOAT,   //Decimales aproximados
     },
     population: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,   //Numero
     }
   }, {
-    timestamps: false 
+    timestamps: false   //Desactiva el DataTypes.DATE
   });
 };

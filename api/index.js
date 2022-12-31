@@ -19,10 +19,16 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
-
+const {getApi} = require ("./src/controllers/Country.js")
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
-  server.listen(3001, () => {
+conn.sync({ force: false }).then(() => {
+  server.listen(3001, async () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
+    await getApi()
   });
 });
+
+//Llamo a GetApi antes que todas las funciones para que sea lo primero que se ejecute
+//Y asi llenar la base de datos; Luego cambio el force a false para que 
+//no se borre y se actualice la base de datos cada vez que se actualiza el navegadpr.
+//(Si no no se guardarian los post del usuario)

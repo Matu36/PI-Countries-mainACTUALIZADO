@@ -34,7 +34,7 @@ export const getAllCountries = (name) => {
 export const getCountryById = (id) => {
   return (dispatch) => {
     fetch(`http://localhost:3001/countries/${id}`)
-      .then((data) => data.json())
+      .then((data) => data.json()) 
       .then((response) => {
         return dispatch({
           type: GET_COUNTRY_BY_ID,

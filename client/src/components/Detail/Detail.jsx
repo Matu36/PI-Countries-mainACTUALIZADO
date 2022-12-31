@@ -8,6 +8,8 @@ import style from "../Detail/Detail.module.css";
 import BACK from "../../img/BBUTTON.PNG";
 
 
+//El useParams podemos reemplazarlo por props.match.params.id (se usa cuando la info 
+//viene por params)
 
 export default function Detail() {
   const { id } = useParams();         // devuelve un objeto con los parametros de la url

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react";  //Estados Locales
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import style from "../Home/Home.module.css";
@@ -59,7 +59,7 @@ export default function Home() {
   const handleFilterActivity = (e) => {
     e.preventDefault();
     dispatch(filterCountryByActivity(e.target.value));
-    setOrder(e.target.value);
+    setOrder(e.target.value);              // ordeno por actividad
   };
 
   const handleOrdered = (e) => {

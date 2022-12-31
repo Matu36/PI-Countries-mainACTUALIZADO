@@ -1,22 +1,19 @@
 //Traigo los modelos creados desde la DataBase
 //Traigo el operador de sequelize
 //Traogp axios para cargar datos de la api a mi base de datos
-const {Country, Tourist} = require ("../db");
+const {Country, Activity} = require ("../db");
 const {Op} = require ('sequelize');
 const axios = require ("axios");
 
 
 //Para ver las tablas creadas pgAdmin VIEWEDITDATA /ALLROWS
-//luego la funcion de la api debe llamarse en el index (async function)
-
-
 //Cargamos la data de la api a la base de datos
 const getApi = async () => {
   try {
     let countries = (await axios.get("https://restcountries.com/v3/all")).data;
-      countries = await Promise.all(
-      countries.map((c) => {
-        Country.findOrCreate({
+      countries = await Promise.all(      //Llamo a todas las promesas juntas
+      countries.map((c) => {              //Mapeo countries
+        Country.findOrCreate({            // Busca o crea lo que le paso en where
           where: {
             id: c.cca3,
             name: c.name.common,
@@ -40,7 +37,7 @@ const getApi = async () => {
 
 //Traemos la data de nuestra base de datos
 const getAllCountries = async () => {
-  const countries = await Country.findAll({
+  const countries = await Country.findAll({  //Recupera todas las entradas de la tabla
     attributes: [
       "id",
       "name",
@@ -51,10 +48,12 @@ const getAllCountries = async () => {
       "subregion",
       "area",
     ],
-    include: Tourist,
+    include: Activity,
   });
   return countries;
+
 };
+
 
 //Obtenemos los paises por nombre
 const getCountryByName = async (name) => {
@@ -65,7 +64,7 @@ const getCountryByName = async (name) => {
       },
     },
     attributes: ["id", "name", "flags", "continent", "capital", "population"],
-    include: Tourist,
+    include: Activity,
   });
 
 return country;
@@ -77,10 +76,10 @@ const getCountries = async (req, res) => {
   let data;
   try {
     if (name) {
-      data = await getCountryByName(name);
+      data = await getCountryByName(name);  //si el nombre existe traigo la data
       res.send(data);
     } else {
-      data = await getAllCountries();
+      data = await getAllCountries();  //sino traigo todo los paises
       data.length > 0
         ? res.send(data)
         : res.status(404).send({ message: "No se encontraron paises " });
@@ -90,12 +89,11 @@ const getCountries = async (req, res) => {
   }
 };
 
-
 //Peticion por parametro para los ID
 const getCountriesById = async (req, res) => {
   const { id } = req.params;
   try {
-    let countryId = await Country.findByPk(id.toUpperCase(), {
+    let countryId = await Country.findByPk(id.toUpperCase(), {  
       attributes: [
         "id",
         "name",
@@ -106,7 +104,7 @@ const getCountriesById = async (req, res) => {
         "subregion",
         "area",
       ],
-      include: Tourist,
+      include: Activity,
     });
     countryId
       ? res.send(countryId)
@@ -115,6 +113,25 @@ const getCountriesById = async (req, res) => {
     res.send(error);
   }
 };
+
+//El metodo findByPk solo busca una entrada en la tabla (el id proporcionado)
+
+/*const deleteCountry = async (req, res) => {
+  const { id} = req.params;
+  try {
+    let countryId = await Country.findByPk(id.toUpperCase());
+    if (countryId) {
+      await countryId.destroy();
+      res.send ("País eliminado");
+    } else {
+      res.status(404).send({ message: "País no encontrado"});
+    }
+  } catch (error) {
+  res.send (error);
+  }
+  }:
+
+  */
 
 module.exports = {
   getApi,
