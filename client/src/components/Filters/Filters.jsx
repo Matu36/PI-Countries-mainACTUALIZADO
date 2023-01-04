@@ -2,7 +2,7 @@ import style from "../Filters/Filters.module.css"
 export default function Filters({
   activities,
   handleOrdered,
-  handleFilterContinent,
+  handleFilterContinent,  
   handleFilterActivity,
 }) {
   return (
@@ -36,3 +36,6 @@ export default function Filters({
     </div>
   );
 }
+
+
+ 

@@ -22,8 +22,9 @@ export default function Home() {
   const dispatch = useDispatch();
   const { countries, page, allActivity } = useSelector((state) => state); 
   const [loader, setLoader] = useState(true);
-  const [filters, setFilters] = useState(false);
-  const [, setOrder] = useState();
+  const [filters, setFilters] = useState(false); // Estado para mostrar u ocultar filtros
+  const [, setOrder] = useState();  // Estado para ordenar por nombre o población
+  
   let countriesPerPage = 10;
   const indexOfLastCountry = page * countriesPerPage - 1; // 1 * 10 - 1 = 9
   const indexOfFirstCountry =
@@ -34,6 +35,8 @@ export default function Home() {
     indexOfFirstCountry,
     indexOfLastCountry
   );
+
+  //el metodo slice extrae elementos de un array y devuelve un nuevo array
 
   const timer = (time) =>
     setTimeout(() => {
@@ -49,7 +52,7 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, [dispatch]);
 
-  const handleFilterContinent = (e) => {
+  const handleFilterContinent = (e) => {  // Filtro por continente
     e.preventDefault();
     dispatch(filterCountryByContinent(e.target.value));
     dispatch(setCurrentPage(1));
@@ -62,13 +65,13 @@ export default function Home() {
     setOrder(e.target.value);              // ordeno por actividad
   };
 
-  const handleOrdered = (e) => {
+  const handleOrdered = (e) => {   //Ordenar por nombre asc o desc o población
     e.preventDefault();
     dispatch(orderCountries(e.target.value));
     setOrder(e.target.value);
   };
 
-  const handleClick = (e) => {
+  const handleClick = (e) => {  // Cargar Países
     e.preventDefault();
     setLoader(true);
     dispatch(getAllCountries());
@@ -82,7 +85,7 @@ export default function Home() {
       <SearchBar />
       <div>
         <button className= {style.buttonsf} title="Filtros" 
-        primary onClick={() => setFilters(!filters)}>
+        primary onClick={() => setFilters(!filters)}> 
         <span>Filtros</span>
         </button>
         <button className= {style.buttonsc} secondary onClick={handleClick}>
