@@ -20,6 +20,7 @@
     "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.3.6",
+    "vercel": "^28.16.15",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

@@ -2,11 +2,11 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-const {
-  DB_URL}
-= process.env;
+//const {
+  //DB_URL}
+//= process.env;
 
-const sequelize = new Sequelize(`postgresql://postgres:o1E8YZoRdtiYScE1OvF2@containers-us-west-159.railway.app:7158/railway`, {
+const sequelize = new Sequelize(`postgres://countries_fspf_user:NQUg490ahZW9pmw75B0nUXoyNhhoJVsb@dpg-cg4usf4eoogtrluvks10-a.oregon-postgres.render.com/countries_fspf`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 });
