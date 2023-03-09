@@ -5,7 +5,7 @@ import style from "../Paged/Paged.module.css";
 import { FiArrowLeft, FiArrowRight, FiChevronsLeft, FiChevronsRight } from "react-icons/fi";
 
 
-export default function Paged({ countriesPerPage }) {  //importado desde home
+export default function Paged({ countriesPerPage }) {  //exportado a home
   const dispatch = useDispatch();
   const { countries, page } = useSelector((state) => state);
 
