@@ -135,7 +135,7 @@ const getCountriesById = async (req, res) => {
   */
 
 module.exports = {
-  //getApi,
+  getApi,
   getCountries,
   getCountriesById,
   getAllCountries,
