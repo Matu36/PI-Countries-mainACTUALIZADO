@@ -16,7 +16,7 @@ import {
 export const getAllCountries = (name) => {
   return (dispatch) => {
     axios
-      .get(`http://localhost:3001/countries?name=${name ? name : ""}`)
+      .get(`/countries?name=${name ? name : ""}`)
       .then((response) => {
         return dispatch({
           type: GET_ALL_COUNTRIES,
@@ -31,10 +31,10 @@ export const getAllCountries = (name) => {
 
 
 //Traigo los paises por id desde el back
+
 export const getCountryById = (id) => {
   return (dispatch) => {
-    fetch(`http://localhost:3001/countries/${id}`)
-      .then((data) => data.json()) 
+    axios.get(`/countries/${id}`)
       .then((response) => {
         return dispatch({
           type: GET_COUNTRY_BY_ID,
@@ -64,7 +64,7 @@ export const getCountryById = (id) => {
 //Traigo las actividades desde el back
 export const getAllActivity = () => {
   return (dispatch) => {
-    axios.get(`http://localhost:3001/activities`).then((response) => {
+    axios.get(`/activities`).then((response) => {
       return dispatch({
         type: GET_ALL_ACTIVITY,
         payload: response.data,
@@ -78,7 +78,7 @@ export const getAllActivity = () => {
 export const createActivity = (activity) => {
   return async (dispatch) => {
     try {
-      await axios.post(`http://localhost:3001/activity`, activity);
+      await axios.post(`/activity`, activity);
       return dispatch({
         type: CREATE_ACTIVITY,
       });
