@@ -8,7 +8,7 @@ const axios = require ("axios");
 
 //Para ver las tablas creadas pgAdmin VIEWEDITDATA /ALLROWS
 //Cargamos la data de la api a la base de datos
-/*const getApi = async () => {
+const getApi = async () => {
   try {
     let countries = (await axios.get("https://restcountries.com/v3/all")).data;
       countries = await Promise.all(      //Llamo a todas las promesas juntas
@@ -33,7 +33,7 @@ const axios = require ("axios");
     return error;
   }
 };
-*/
+
 
 
 //Traemos la data de nuestra base de datos
