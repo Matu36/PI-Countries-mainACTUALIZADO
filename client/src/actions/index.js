@@ -16,7 +16,7 @@ import {
 export const getAllCountries = (name) => {
   return (dispatch) => {
     axios
-      .get(`/countries?name=${name ? name : ""}`)
+      .get(`https://pi-countries-mainactualizado-production.up.railway.app/countries?name=${name ? name : ""}`)
       .then((response) => {
         return dispatch({
           type: GET_ALL_COUNTRIES,
@@ -34,7 +34,7 @@ export const getAllCountries = (name) => {
 
 export const getCountryById = (id) => {
   return (dispatch) => {
-    axios.get(`/countries/${id}`)
+    axios.get(`https://pi-countries-mainactualizado-production.up.railway.app/countries/${id}`)
       .then((response) => {
         return dispatch({
           type: GET_COUNTRY_BY_ID,
@@ -64,7 +64,7 @@ export const getCountryById = (id) => {
 //Traigo las actividades desde el back
 export const getAllActivity = () => {
   return (dispatch) => {
-    axios.get(`/activities`).then((response) => {
+    axios.get(`https://pi-countries-mainactualizado-production.up.railway.app/activities`).then((response) => {
       return dispatch({
         type: GET_ALL_ACTIVITY,
         payload: response.data,
@@ -78,7 +78,7 @@ export const getAllActivity = () => {
 export const createActivity = (activity) => {
   return async (dispatch) => {
     try {
-      await axios.post(`/activity`, activity);
+      await axios.post(`https://pi-countries-mainactualizado-production.up.railway.app/activity`, activity);
       return dispatch({
         type: CREATE_ACTIVITY,
       });
