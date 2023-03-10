@@ -38,7 +38,7 @@ export const getCountryById = (id) => {
       .then((response) => {
         return dispatch({
           type: GET_COUNTRY_BY_ID,
-          payload: response,
+          payload: response.data
         });
       })
       .catch((error) => {
