@@ -5,7 +5,7 @@ import Form from "./components/Form/Form";
 import Detail from "./components/Detail/Detail";
 
 
-
+// aca va el axios.default.URL DEL BACK PARA CONECTAR CON EL FRONT EN LAS ACTIONS
 
 export default function App() {
   return (
