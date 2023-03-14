@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../img/soyhenry.png";
-import { Box, Flex, Text, Button, Image } from "@chakra-ui/react";
+import { Box, Flex, Text, Button,  } from "@chakra-ui/react";
 import Paises from "../../img/Paises.jpg";
 import "../fonts.css";
 
@@ -13,11 +12,12 @@ export default function LandingPage() {
   alignItems="center"
   justifyContent="center"
   height={{ base: "100vh", md: "100vh" }}
-  backgroundImage={Paises}
+   backgroundImage={Paises}
   backgroundSize="cover"
-  backgroundPosition={{ base: "center right", md: "center center" }}
+  backgroundPosition={{ base: "center right", md: "left" }}
   backgroundAttachment="fixed"
   filter="contrast(100%)"
+  backgroundRepeat="no-repeat"
 >
   <Box
     textAlign= "center"
@@ -64,7 +64,7 @@ export default function LandingPage() {
 
   <Box marginTop={{ base: "20px", md: "20px" }} marginLeft={{ base: "100px", md: "650px" }}>
     <Link to={"/Home"}>
-      <Button size={{ base: "md", md: "xl" }} colorScheme="yellow" _hover={{
+      <Button size={{ base: "md", md: "xl" }} colorScheme="black.200" _hover={{
     fontSize: "70px",
     opacity: "0.4",
   }}boxShadow="x4" padding={{ base: "5px", md: "5px" }} borderRadius= "15px">
@@ -83,7 +83,7 @@ export default function LandingPage() {
     position={{ base: "relative", md: "absolute" }}
     bottom={{ base: "-60px", md: "0" }}
     left={{ base: "210px", md: "unset" }}
-    right={{ base: "0px", md: "20px" }}
+    right={{ base: "0px", md: "0px" }}
     textAlign={{ base: "center", md: "right" }}
     marginTop={{ base: "20px", md: "280px" }}
   >
@@ -91,11 +91,7 @@ export default function LandingPage() {
     
     <Text color="black"> Creado Por Matías Pineda</Text>
     </Box>
-    <Box position="fixed" bottom="0px" right="210px">
-    <Image marginBottom= "0"
-    marginLeft= "600px"
-    width="25px" height="25px" src={logo} alt="logo" />
-  </Box>
+    
   </Flex>
 </Box>
   )}
