@@ -9,21 +9,22 @@
   border-radius: 0.75rem;
 }
 
-.input {
-    border: none;
-    outline: none;
-    margin-right: 0.5rem;
-    width: 80%;
-    height: 100%;
-    border-radius: 0.75rem;
-    padding: 7px 10px;
-    font-size: 1rem;
-    font-family: "Quicksand", sans-serif;
-  }
+.inputt {
+  border: solid black;
+  outline: none;
+  margin-right: 0.5rem;
+  width: 50%;
+  height: 2rem;
+  border-radius: 0.75rem;
+  padding: 12px 10px;
+  font-size: 1rem;
+  font-family: "Quicksand", sans-serif;
+  color: black;
+}
   
   .FcSearch {
     margin: 0 0.5rem;
-   size: 30px;
+    font-size: 2rem;
   }
 
   .FcSearch:hover {

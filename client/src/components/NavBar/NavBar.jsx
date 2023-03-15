@@ -1,7 +1,7 @@
 import React from "react";
 import style from "../NavBar/NavBar.module.css";
 import { Link } from "react-router-dom";
-
+import { Text, Box, Button, Image, Flex } from "@chakra-ui/react";
 
 export default function NavBar() {
   return (
@@ -11,9 +11,13 @@ export default function NavBar() {
       </Link>
       <div>
         <Link className = {style.link} to="/create">
-          <button className= {style.button} title="Crear Actividad" tertiary>
+          <Button mt={6} 
+          size="lg" 
+          colorScheme="yellow"
+          marginTop={{base: "2px", md: "2px"}}
+          marginLeft={{base: "70", md: "-400px"}}  title="Crear Actividad" tertiary>
             <span>Crear Actividad</span>
-          </button>
+          </Button>
         </Link>
       </div>
     </div>

@@ -17,6 +17,7 @@ import NavBar from "../NavBar/NavBar";
 import SearchBar from "../SearchBar/SearchBar.jsx"
 import PageNotFound from "../../img/PageNotFound.jpg";
 import {SpinningCircles } from 'react-loading-icons';
+import {Button } from "@chakra-ui/react";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -84,13 +85,23 @@ export default function Home() {
       <NavBar handleClick={handleClick} />
       <SearchBar />
       <div>
-        <button className= {style.buttonsf} title="Filtros" 
+      <Button mt={6} 
+          size="lg" 
+          colorScheme="yellow"
+          marginTop={{base: "0", md: "2px"}}
+          marginLeft={{base: "50", md: "50px"}} title="Filtros" 
         primary onClick={() => setFilters(!filters)}> 
         <span>Filtros</span>
-        </button>
-        <button className= {style.buttonsc} secondary onClick={handleClick}>
+        </Button>
+        </div>
+        <div>
+        <Button mt={6} 
+          size="lg" 
+          colorScheme="yellow"
+          marginTop={{base: "-180", md: "-338px"}}
+          marginLeft={{base: "383", md: "400px"}} secondary onClick={handleClick}>
           <span>Cargar Paises</span>
-        </button>
+        </Button>
       </div>
       {filters && (
         <Filters
@@ -101,7 +112,7 @@ export default function Home() {
           handleFilterActivity={handleFilterActivity}
         />
       )}
-      <Paged countriesPerPage={countriesPerPage} />
+     
       <div className= {style.countries}>
         {loader ? (
           <SpinningCircles className= {style.sCircles}/>
@@ -122,6 +133,7 @@ export default function Home() {
             </div>
           )
         )}
+         <Paged countriesPerPage={countriesPerPage} />
       </div>
     </div>
   );

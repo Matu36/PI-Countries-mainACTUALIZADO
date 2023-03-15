@@ -1,5 +1,5 @@
 .container {
-    background-image: url(../../img/FONDO.jpg);
+    background-color:whitesmoke;
     display: flex;
     height: 100%;
     width: 100%;
@@ -17,12 +17,19 @@
 
 .globo {
     display: flex;
-    position: absolute;
-    height: 300px;
+    position: relative;
+    height: 100%;
     width: 300px;
-    right: 100px;
-    top: 100px;
-}
+    left: calc(100vw - 300px);
+    top: 0;
+    transform: scaleX(1.6);
+  }
+  @media (max-width: 600px) {
+    .globo {
+      transform: scaleX(0.8); /* reducir el ancho en un 50% */
+      margin-left: auto;
+    }
+  }
 
 
 .country {
@@ -44,13 +51,13 @@
 
 .content {
     display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 100px;
+  
+ 
+  margin-left: 0px;
   margin-top: 50px;
   font-size: medium;
   font-style:initial;
-  height: 50%;
+  height: 10%;
 }
 
 .label {
@@ -59,6 +66,7 @@
   font-weight: bolder;
 }
 
+
 .select {
     cursor: pointer;
     padding: 0.5rem 1rem;
@@ -66,7 +74,7 @@
     border: none;
     background: #f0f0f0;
     font-size: 1rem;
-    color: var(--background-color);
+    color: black;
     font-family: "Quicksand", sans-serif;
     border-radius: 0.4rem;
     width: 100%;
@@ -74,14 +82,21 @@
 
 .input {
 
-    border: none;
+    border: solid black;
     outline: none;
     border-radius: 0.4rem;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     font-family: "Quicksand", sans-serif;
     width: 100%;
+    color: black;
 }
+
+@media (max-width: 768px) {
+    .input {
+      width: 80%;
+    }
+  }
 
 .Error {
     color: lightcoral;
@@ -96,14 +111,14 @@
 .btn {
     
   margin: 1.5rem 0;
-  margin-left: 100px;
+  
   cursor: pointer;
   size: 150px;
     font-size:15px;
         font-family:Verdana,Helvetica;
-        font-weight:bold;
-        color:white;
-        background:#638cb5;
+        font-weight: bolder;
+                color:black;
+        background:yellow;
         border: 1px;
         width:200px;
         height:40px;
@@ -111,14 +126,15 @@
 }
 
 .btn:hover {
-    color: #638cb5;
-    background-color: white;
+    color: yellow;
+    background-color:black;
     cursor: pointer;
 }
 
 .rinput {
     margin: 0.5rem;
 }
+
 
 .radio {
     width: 100%;
@@ -128,13 +144,3 @@
   font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 
-.h1 {
-    position: absolute;
-    left: 180px;
-    top: 2px;
-    font-size:xx-large;
-    color:wheat;
-    border-color: blue;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: bolder;
-}

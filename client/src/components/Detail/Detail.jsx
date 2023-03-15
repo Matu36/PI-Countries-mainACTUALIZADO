@@ -6,7 +6,7 @@ import { getCountryById } from "../../actions/index";
 import {SpinningCircles   } from 'react-loading-icons';
 import style from "../Detail/Detail.module.css";
 import BACK from "../../img/BBUTTON.PNG";
-
+import { Text, Box, Button, Image, Flex } from "@chakra-ui/react";
 
 //El useParams podemos reemplazarlo por props.match.params.id (se usa cuando la info 
 //viene por params)
@@ -38,37 +38,38 @@ export default function Detail() {
                 <img className ={style.imgbackbutton}src= {BACK} alt= "back"/>
               </Link>
               <div>
-                <h2>{country.name}</h2>
+                <Text color= "black" fontSize= "20px" fontWeight="bold">{country.name}</Text>
                 <img className = {style.img} src={country.flags} width="100px" alt={country.name} />
               </div>
             </div>
             <hr />
             <div className= {style.content}>
               <div className= {style.info}>
-                <h1 className= {style.names}> Características</h1>
+                <Text fontSize={{base: "29px", md: "36px"}} fontWeight="extrabold"> Características</Text>
                 <hr />
                 <div>
-                  <span className= {style.span}>Continente: </span> {country.continent}
+                  <span className= {style.span}>Continente: </span> 
+                  <Text fontSize= "20px" color= "black">{country.continent} </Text>
                 </div>
                 <div>
                   <span className={style.span}>Capital: </span>
-                  {country.capital}
+                  <Text fontSize= "20px" color= "black"> {country.capital}</Text>
                 </div>
                 <div>
                   <span className={style.span}>Subregion: </span>
-                  {country.subregion}
+                  <Text fontSize= "20px" color= "black">{country.subregion}</Text>
                 </div>
                 <div>
                   <span className= {style.span}>Área: </span>
-                  {country.area?.toLocaleString()} km²
+                  <Text fontSize= "20px" color= "black">{country.area?.toLocaleString()} km² </Text>
                 </div>
                 <div>
                   <span className= {style.span}>Habitantes: </span>
-                  {country.population?.toLocaleString()}  
+                  <Text fontSize= "20px" color= "black">{country.population?.toLocaleString()}  </Text>
                 </div>
               </div>
               <div className= {style.act}>
-                <h1 className= {style.names}>Actividades</h1>
+              <Text fontSize={{base: "29px", md: "36px"}} fontWeight="extrabold"> Actividades</Text>
                 <hr />
                 <div className= {style.adiv}>
                   {country.activities?.length > 0 ? (
@@ -82,7 +83,7 @@ export default function Detail() {
                       />
                     ))
                   ) : (
-                    <h3>No se encontraron actividades</h3>
+                    <Text fontSize= "20px" color= "black">No se encontraron actividades</Text>
                   )}
                 </div>
               </div>

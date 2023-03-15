@@ -12,7 +12,8 @@ import {
 } from "../../actions/index";
 import style from "../Form/form.module.css"
 import bbuton from "../../img/BBUTTON.PNG";
-import Globo from "../../img/TOURIST.PNG";
+import Globo from "../../img/create.jpg";
+import { Box, Flex, Text, Button, Image  } from "@chakra-ui/react";
 
 const validate = (activity, activities = []) => {
   let errors = {};
@@ -157,12 +158,22 @@ export default function Form() {
       <Link to="/home">
           <img className = {style.bbuton} src={bbuton} alt="ATRAS" />
         </Link>
-        <img className = {style.globo}src={Globo} alt="Globo" />
-      <div className= {style.content}>
-        <h1 className= {style.h1}> Actividad turística</h1>
-        <div>
+        <Box>
+        <Image className = {style.globo}src={Globo} alt="Globo" />
+        </Box>
+      <Box  
+      flexDirection={{ base: "column", md: "row" }}
+      justifyContent={{ base: "flex-start", md: "center" }}
+        marginLeft= {{base: "-300", md: "-150px"}}
+        marginTop= {{base: "50px", md: ""}}  >
+        <Text fontSize= {{base: "30px", md: "40px"}} color= "yellow" fontWeight= "extrabold"
+        textShadow="0 0 2px black, 0 0 5px grey"> Actividad turística</Text>
+        
+       <Box marginTop= "50px">
+         
           <label className= {style.label}>
-            <p>País</p>
+            <Text fontSize= "20px" color= "yellow" fontWeight= "extrabold"
+            textShadow="0 0 2px black, 0 0 5px grey">País</Text>
             <select className= {style.select} name="countries" onChange={handleSelect}>
               <option value="">Seleccionar País</option>
               {countries.map((country, index) => (
@@ -185,10 +196,11 @@ export default function Form() {
               ))}
             </div>
           </label>
-        </div>
+          </Box>
         <div>
           <label className= {style.label}>
-            <p>Nombre</p>
+            <Text fontSize= "20px" color= "yellow" fontWeight= "extrabold"
+            textShadow="0 0 2px black, 0 0 5px grey" >Nombre</Text>
             <input className= {style.input}
               type="text"
               name="name"
@@ -202,7 +214,8 @@ export default function Form() {
         </div>
         <div>
           <label className= {style.label}>
-            <p>Duración</p>
+          <Text fontSize= "20px" color= "yellow" fontWeight= "extrabold" 
+          textShadow="0 0 2px black, 0 0 5px grey" >Duración</Text>
             <input className= {style.input}
               type="number"
               name="duration"
@@ -218,9 +231,10 @@ export default function Form() {
 
         <div>
           <label className= {style.label}>
-            <p>Dificultad</p>
+          <Text fontSize= "20px" color= "yellow" fontWeight= "extrabold"
+          textShadow="0 0 2px black, 0 0 5px grey" >Dificultad</Text>
             <div className= {style.radio}>
-              <div>
+            <Box color= "black" fontSize= {{base: "10px", md: "16px"}}>
                 <input className= {style.rinput}
                   type="radio"
                   name="difficulty"
@@ -228,8 +242,8 @@ export default function Form() {
                   onChange={handleCheck}
                 />
                 Muy baja
-              </div>
-              <div>
+              </Box>
+              <Box color= "black" fontSize= {{base: "10px", md: "16px"}}>
                 <input className= {style.rinput}
                   type="radio"
                   name="difficulty"
@@ -237,8 +251,8 @@ export default function Form() {
                   onChange={handleCheck}
                 />
                 baja
-              </div>
-              <div>
+                </Box>
+                <Box color= "black" fontSize= {{base: "10px", md: "16px"}}>
                 <input className= {style.rinput}
                   type="radio"
                   name="difficulty"
@@ -246,8 +260,8 @@ export default function Form() {
                   onChange={handleCheck}
                 />
                 Media
-              </div>
-              <div>
+              </Box>
+              <Box color= "black" fontSize= {{base: "10px", md: "16px"}}>
                 <input className= {style.rinput}
                   type="radio"
                   name="difficulty"
@@ -255,8 +269,8 @@ export default function Form() {
                   onChange={handleCheck}
                 />
                 alta
-              </div>
-              <div>
+              </Box>
+              <Box color= "black" fontSize= {{base: "10px", md: "16px"}}>
                 <input className= {style.rinput}
                   type="radio"
                   name="difficulty"
@@ -264,16 +278,17 @@ export default function Form() {
                   onChange={handleCheck}
                 />
                 Muy alta
-              </div>
+              </Box>
             </div>
             {errors.difficulty && <div className={style.Error}>{errors.difficulty}</div>}
           </label>
         </div>
         <div>
           <label className= {style.label}>
-            <p>Temporada</p>
+          <Text fontSize= "20px" color= "yellow" fontWeight= "extrabold"
+          textShadow="0 0 2px black, 0 0 5px grey" >Temporada</Text>
             <div className= {style.radio}>
-              <div>
+            <Box color= "black" fontSize= {{base: "10px", md: "16px"}}>
                 <input className= {style.rinput}
                   type="radio"
                   name="seasson"
@@ -281,8 +296,8 @@ export default function Form() {
                   onChange={handleCheck}
                 />
                 Verano
-              </div>
-              <div>
+              </Box>
+              <Box color= "black" fontSize= {{base: "10px", md: "16px"}}>
                 <input className= {style.rinput}t
                   type="radio"
                   name="seasson"
@@ -290,8 +305,8 @@ export default function Form() {
                   onChange={handleCheck}
                 />
                 Otoño
-              </div>
-              <div>
+              </Box>
+              <Box color= "black" fontSize= {{base: "10px", md: "16px"}}>
                 <input className= {style.rinput}
                   type="radio"
                   name="seasson"
@@ -299,8 +314,8 @@ export default function Form() {
                   onChange={handleCheck}
                 />
                 Invierno
-              </div>
-              <div>
+              </Box>
+              <Box color= "black" fontSize= {{base: "10px", md: "16px"}}>
                 <input className= {style.rinput}
                   type="radio"
                   name="seasson"
@@ -308,17 +323,18 @@ export default function Form() {
                   onChange={handleCheck}
                 />
                 Primavera
-              </div>
+              </Box>
             </div>
             {errors.seasson && <div className={style.Error}>{errors.seasson}</div>}
           </label>
         </div>
-        <div>
+        
           <button className= {style.btn} type="submit" tertiary>
             Crear Actividad
           </button>
-        </div>
-      </div>
+          </Box>
+       
+      
     </form>
   );
 }

@@ -30,7 +30,7 @@ export default function SearchBar() {
     <div>
       <form className = {style.form} onSubmit={handleOnClick}>
         <FcSearch className= {style.FcSearch} onClick={handleOnClick} />
-        <input className= {style.input}
+        <input className= {style.inputt}
           type="text"
           placeholder="Buscar País"
           onChange={handleOnChange}

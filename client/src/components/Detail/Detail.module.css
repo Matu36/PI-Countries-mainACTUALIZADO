@@ -1,5 +1,5 @@
 .container {
-    background-image: url("../../img/FONDO.jpg");
+    background-color: white;
     padding: 0.5rem 1.5rem;
     color: var(--text-color);
     min-height: 100vh;
@@ -14,6 +14,11 @@
 
 .img {
     display: flex;
+}
+@media screen and (max-width: 768px) {
+  .img {
+    margin-left: -150px;
+  }
 }
 
 .imgbackbutton {
@@ -53,6 +58,14 @@
   padding: 3.5rem;
 }
 
+@media screen and (max-width: 768px) {
+  .info,
+  .act {
+    width: 50%;
+    padding: 2rem;
+  }
+}
+
 .adiv {
     display: flex;
     flex-wrap: wrap;
@@ -61,6 +74,7 @@
 
 .names {
     display: flex;
+    
     
     
 }
