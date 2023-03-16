@@ -1,8 +1,10 @@
 .container {
-    background-color: white;
+    background-color: whitesmoke;
     padding: 0.5rem 1.5rem;
     color: var(--text-color);
     min-height: 100vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 5px solid #ccc;
 
 }
 
@@ -14,10 +16,11 @@
 
 .img {
     display: flex;
+    margin-left: 250px;
 }
 @media screen and (max-width: 768px) {
   .img {
-    margin-left: -150px;
+    margin-left: 250px;
   }
 }
 

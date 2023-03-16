@@ -6,7 +6,7 @@ import { getCountryById } from "../../actions/index";
 import {SpinningCircles   } from 'react-loading-icons';
 import style from "../Detail/Detail.module.css";
 import BACK from "../../img/BBUTTON.PNG";
-import { Text, Box, Button, Image, Flex } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 
 //El useParams podemos reemplazarlo por props.match.params.id (se usa cuando la info 
 //viene por params)
@@ -38,7 +38,7 @@ export default function Detail() {
                 <img className ={style.imgbackbutton}src= {BACK} alt= "back"/>
               </Link>
               <div>
-                <Text color= "black" fontSize= "20px" fontWeight="bold">{country.name}</Text>
+                <Text align= "right"  color= "black" fontSize= "20px" fontWeight="bold">{country.name}</Text>
                 <img className = {style.img} src={country.flags} width="100px" alt={country.name} />
               </div>
             </div>
