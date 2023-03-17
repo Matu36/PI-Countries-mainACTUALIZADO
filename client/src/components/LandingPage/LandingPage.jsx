@@ -11,21 +11,23 @@ export default function LandingPage() {
   flexDirection={{ base: "column", md: "column" }}
   alignItems="center"
   justifyContent="center"
-  height={{ base: "100vh", md: "100vh" }}
+  height={{ base: "220vh", md: "100vh" }}
    backgroundImage={Paises}
   backgroundSize="cover"
-  backgroundPosition={{ base: "center right", md: "left" }}
+  backgroundPosition={{ base: "-1400px", md: "left" }}
   backgroundAttachment="fixed"
   filter="contrast(100%)"
   backgroundRepeat="no-repeat"
+  width={{base: "120vh", md: "230vh"}}
+  
 >
   <Box
     textAlign= "center"
-    marginTop={{ base: "150", md: "-80px" }}
-    marginLeft={{ base: "100px", md: "650px" }}
+    marginTop={{ base: "50", md: "-80px" }}
+    marginLeft={{ base: "10px", md: "650px" }}
   >
     <Text
-      fontSize={{ base: "34px", md: "24px" }}
+      fontSize={{ base: "54px", md: "24px" }}
       color="black"
       fontWeight="bold"
       fontFamily="Pacifico"
@@ -36,8 +38,8 @@ export default function LandingPage() {
     </Text>
 
     <Text
-      fontSize={{ base: "100px", md: "100px" }}
-      color="black"
+      fontSize={{ base: "140px", md: "100px" }}
+      color= {{base: "black", md: "black"}}
       fontWeight="bold"
       fontFamily="Pacifico"
       

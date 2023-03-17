@@ -98,8 +98,8 @@ export default function Home() {
         <Button mt={6} 
           size="lg" 
           colorScheme="yellow"
-          marginTop={{base: "-180", md: "-338px"}}
-          marginLeft={{base: "383", md: "400px"}} secondary onClick={handleClick}>
+          marginTop={{base: "-280", md: "-338px"}}
+          marginLeft={{base: "200", md: "400px"}} secondary onClick={handleClick}>
           <span>Cargar Paises</span>
         </Button>
       </div>

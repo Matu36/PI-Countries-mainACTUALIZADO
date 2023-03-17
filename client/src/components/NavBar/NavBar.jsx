@@ -15,7 +15,7 @@ export default function NavBar() {
           size="lg" 
           colorScheme="yellow"
           marginTop={{base: "2px", md: "2px"}}
-          marginLeft={{base: "70", md: "-400px"}}  title="Crear Actividad" tertiary>
+          marginLeft={{base: "0px", md: "-400px"}}  title="Crear Actividad" tertiary>
             <span>Crear Actividad</span>
           </Button>
         </Link>

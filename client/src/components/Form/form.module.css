@@ -26,9 +26,9 @@
     top: 0;
     transform: scaleX(1.6);
   }
-  @media (max-width: 600px) {
+  @media (max-width: 1000px) {
     .globo {
-      transform: scaleX(0.8); /* reducir el ancho en un 50% */
+      transform: scaleX(0.5); /* reducir el ancho en un 50% */
       margin-left: auto;
     }
   }
