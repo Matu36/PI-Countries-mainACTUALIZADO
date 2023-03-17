@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^1.6.8",
+    "@emotion/react": "^11.10.6",
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^13.1.1",
@@ -49,7 +50,6 @@
     ]
   },
   "devDependencies": {
-    
     "eslint-plugin-react-hooks": "^4.6.0"
   }
 }
