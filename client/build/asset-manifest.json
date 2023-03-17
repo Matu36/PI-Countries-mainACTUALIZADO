@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.88220aab.chunk.css",
+    "main.js": "/static/js/main.7dbc9b52.chunk.js",
+    "main.js.map": "/static/js/main.7dbc9b52.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.5169a808.js",
+    "runtime-main.js.map": "/static/js/runtime-main.5169a808.js.map",
+    "static/js/2.776e40a6.chunk.js": "/static/js/2.776e40a6.chunk.js",
+    "static/js/2.776e40a6.chunk.js.map": "/static/js/2.776e40a6.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.88220aab.chunk.css.map": "/static/css/main.88220aab.chunk.css.map",
+    "static/js/2.776e40a6.chunk.js.LICENSE.txt": "/static/js/2.776e40a6.chunk.js.LICENSE.txt",
+    "static/media/BBUTTON.6a24d399.PNG": "/static/media/BBUTTON.6a24d399.PNG",
+    "static/media/fonts.css": "/static/media/Pacifico-Regular.c0d735fc.ttf",
+    "static/media/PageNotFound.17631fca.jpg": "/static/media/PageNotFound.17631fca.jpg",
+    "static/media/Paises.e775cfc7.jpg": "/static/media/Paises.e775cfc7.jpg",
+    "static/media/create.aaf55926.jpg": "/static/media/create.aaf55926.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5169a808.js",
+    "static/js/2.776e40a6.chunk.js",
+    "static/css/main.88220aab.chunk.css",
+    "static/js/main.7dbc9b52.chunk.js"
+  ]
+}
