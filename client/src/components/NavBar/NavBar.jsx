@@ -1,7 +1,7 @@
 import React from "react";
 import style from "../NavBar/NavBar.module.css";
 import { Link } from "react-router-dom";
-import { Text, Box, Button, Image, Flex } from "@chakra-ui/react";
+import {Button } from "@chakra-ui/react";
 
 export default function NavBar() {
   return (

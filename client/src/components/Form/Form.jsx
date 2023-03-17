@@ -13,7 +13,7 @@ import {
 import style from "../Form/form.module.css"
 import bbuton from "../../img/BBUTTON.PNG";
 import Globo from "../../img/create.jpg";
-import { Box, Flex, Text, Button, Image  } from "@chakra-ui/react";
+import { Box,Text, Image  } from "@chakra-ui/react";
 
 const validate = (activity, activities = []) => {
   let errors = {};

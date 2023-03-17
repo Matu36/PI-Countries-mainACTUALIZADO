@@ -1,6 +1,6 @@
 import style from "../Country/Country.module.css";
 import { Link } from "react-router-dom";
-import { Box, Image, Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 export default function Country({ id, name, flags, continent }) {
   return (

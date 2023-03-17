@@ -1,6 +1,6 @@
 import React from "react";
 import style from "../Activity/Activity.module.css"
-import { Text, Box, Button, Image, Flex } from "@chakra-ui/react";
+import { Text} from "@chakra-ui/react";
 
 export default function Activity({ name, difficulty, duration, seasson }) {
   return (
