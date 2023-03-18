@@ -71,7 +71,7 @@ export default function LandingPage() {
     opacity: "0.4",
   }}boxShadow="x4" padding={{ base: "5px", md: "5px" }} borderRadius= "15px">
         <Text
-          fontSize={{ base: "18px", md: "35px" }}
+          fontSize={{ base: "45px", md: "35px" }}
           fontFamily="fantasy"
           fontWeight="bold"
         >

@@ -45,7 +45,7 @@ export default function Detail() {
             <hr />
             <div className= {style.content}>
               <div className= {style.info}>
-                <Text fontSize={{base: "29px", md: "36px"}} fontWeight="extrabold"> Características</Text>
+                <Text fontSize={{base: "16px", md: "36px"}} fontWeight="extrabold"> Características</Text>
                 <hr />
                 <div>
                   <span className= {style.span}>Continente: </span> 
@@ -69,7 +69,7 @@ export default function Detail() {
                 </div>
               </div>
               <div className= {style.act}>
-              <Text fontSize={{base: "29px", md: "36px"}} fontWeight="extrabold"> Actividades</Text>
+              <Text fontSize={{base: "16px", md: "36px"}} fontWeight="extrabold"> Actividades</Text>
                 <hr />
                 <div className= {style.adiv}>
                   {country.activities?.length > 0 ? (

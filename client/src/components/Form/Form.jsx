@@ -164,7 +164,7 @@ export default function Form() {
       <Box  
       flexDirection={{ base: "column", md: "row" }}
       justifyContent={{ base: "flex-start", md: "center" }}
-        marginLeft= {{base: "-300", md: "-150px"}}
+        marginLeft= {{base: "0", md: "-150px"}}
         marginTop= {{base: "50px", md: ""}}  >
         <Text fontSize= {{base: "30px", md: "40px"}} color= "yellow" fontWeight= "extrabold"
         textShadow="0 0 2px black, 0 0 5px grey"> Actividad turística</Text>

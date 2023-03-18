@@ -28,8 +28,7 @@
   }
   @media (max-width: 1000px) {
     .globo {
-      transform: scaleX(0.5); /* reducir el ancho en un 50% */
-      margin-left: auto;
+      display: none;
     }
   }
 
