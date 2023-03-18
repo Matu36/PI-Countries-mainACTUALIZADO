@@ -28,7 +28,7 @@
   }
   @media (max-width: 1000px) {
     .globo {
-      display: none;
+      display: none !important;
     }
   }
 

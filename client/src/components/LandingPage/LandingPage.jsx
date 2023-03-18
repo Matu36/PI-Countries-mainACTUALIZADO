@@ -66,11 +66,12 @@ export default function LandingPage() {
 
   <Box marginTop={{ base: "20px", md: "20px" }} marginLeft={{ base: "100px", md: "650px" }}>
     <Link to={"/Home"}>
-      <Button size={{ base: "md", md: "xl" }} colorScheme="black.200" _hover={{
+      <Button size={{ base: "lg", md: "xl" }} colorScheme="black" _hover={{
     fontSize: "70px",
     opacity: "0.4",
   }}boxShadow="x4" padding={{ base: "5px", md: "5px" }} borderRadius= "15px">
         <Text
+        color= "black"
           fontSize={{ base: "45px", md: "35px" }}
           fontFamily="fantasy"
           fontWeight="bold"
