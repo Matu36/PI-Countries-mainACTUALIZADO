@@ -8,7 +8,7 @@ export default function LandingPage() {
   return (
     <Box
   display="flex"
-  flexDirection={{ base: "column", md: "column" }}
+ 
   alignItems="center"
   justifyContent="center"
   height={{ base: "100vh", md: "100vh" }}
@@ -16,7 +16,7 @@ export default function LandingPage() {
   //backgroundSize="cover"
   backgroundPosition={{ base: "center", md: "left" }}
   //backgroundAttachment="fixed"
-  backgroundSize={{base: "100% 100%", md:"100% 100%"}}
+  backgroundSize={{base: "cover", md:"100% 100%"}}
   filter="contrast(100%)"
   backgroundRepeat="no-repeat"
   width={{base: "100vh", md: "217vh"}}
@@ -82,7 +82,7 @@ export default function LandingPage() {
     padding={{ base: "5px", md: "5px" }} 
     borderRadius= "15px"
     position="fixed"
-    bottom="10px"
+    bottom={{base: "30px", md:"10px"}}
     right= {{base: "40px", md:"100px"}}
     borderColor="blue"
     color="black"
