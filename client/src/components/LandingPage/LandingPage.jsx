@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Box,  Text, Button,  } from "@chakra-ui/react";
-import count from "../../img/pais.jpg";
+import count from "../../img/pases.jpg";
 import "../fonts.css";
 
 export default function LandingPage() {
@@ -22,7 +22,7 @@ export default function LandingPage() {
   width={{base: "100vh", md: "217vh"}}
   
 >
-  <Box
+  {/* <Box
     textAlign= "center"
     marginTop={{ base: "30px", md: "0" }}
     marginLeft={{ base: "350px", md: "450px" }}
@@ -64,25 +64,42 @@ export default function LandingPage() {
       cosas mas. No solo eso, sino que también nos permitirá agregar actividades
       turísticas de cada país en particular.
     </Text>
-  </Box>
+  </Box> */}
 
-  <Box marginTop={{ base: "180px", md: "40px" }} marginLeft={{ base: "450px", md: "650px" }}>
-    <Link to={"/Home"}>
-      <Button size={{ base: "lg", md: "xl" }} colorScheme="black" _hover={{
-    fontSize: "70px",
-    opacity: "0.4",
-  }}boxShadow="x4" padding={{ base: "5px", md: "5px" }} borderRadius= "15px">
-        <Text
-        color= "black"
-          fontSize={{ base: "45px", md: "35px" }}
-          fontFamily="fantasy"
-          fontWeight="bold"
-        >
-          Ingresar
-        </Text>
-      </Button>
-    </Link>
-  </Box>
-
+  
+<Link to={"/Home"}>
+  <Button 
+    size={{ base: "lg", md: "xl" }} 
+    colorScheme="white" 
+    _hover={{
+      fontSize: "70px",
+      opacity: "0.9",
+      boxShadow: "0 10px 20px rgba(0,0,0,0.3)", // Agregamos una sombra
+      transform: "translateY(-5px)", // Hacemos que el botón se levante un poco al pasar el cursor
+      background: "linear-gradient(to right, #FFDAB9, #FFA07A)" // Agregamos un gradiente de color al fondo
+    }}
+    boxShadow="x4" 
+    padding={{ base: "5px", md: "5px" }} 
+    borderRadius= "15px"
+    position="fixed"
+    bottom="10px"
+    right= {{base: "40px", md:"100px"}}
+    borderColor="blue"
+    color="black"
+    transition="all 0.3s ease-in-out" // Agregamos una transición suave
+  >
+    <Text
+      fontSize={{ base: "45px", md: "35px" }}
+      fontFamily="monospace"
+      fontWeight= "extrabold"
+    >
+      Ingresar
+    </Text>
+  </Button>
+</Link>
 </Box>
   )}
+
+
+
+
