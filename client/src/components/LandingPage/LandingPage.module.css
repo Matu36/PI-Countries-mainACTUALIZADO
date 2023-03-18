@@ -1,9 +1,9 @@
 .container {
     background-image: url("../../img/lpage.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;
-    height: 100vh;
-    background-position: center;
+    background-size: 80%;
+    height: 80vh;
+    background-position: left;
     font-family: 'Courier New', Courier, monospace;
     display: flex;
 }

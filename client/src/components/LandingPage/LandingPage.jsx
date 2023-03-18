@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Box, Flex, Text, Button,  } from "@chakra-ui/react";
-import Paises from "../../img/Paises.jpg";
+import count from "../../img/pais.jpg";
 import "../fonts.css";
 
 export default function LandingPage() {
@@ -11,20 +11,21 @@ export default function LandingPage() {
   flexDirection={{ base: "column", md: "column" }}
   alignItems="center"
   justifyContent="center"
-  height={{ base: "220vh", md: "100vh" }}
-   backgroundImage={Paises}
-  backgroundSize="cover"
-  backgroundPosition={{ base: "-1400px", md: "left" }}
-  backgroundAttachment="fixed"
+  height={{ base: "100vh", md: "100vh" }}
+   backgroundImage={count}
+  //backgroundSize="cover"
+  backgroundPosition={{ base: "center", md: "left" }}
+  //backgroundAttachment="fixed"
+  backgroundSize={{base: "100% 100%", md:"100% 100%"}}
   filter="contrast(100%)"
   backgroundRepeat="no-repeat"
-  width={{base: "120vh", md: "230vh"}}
+  width={{base: "100vh", md: "217vh"}}
   
 >
   <Box
     textAlign= "center"
-    marginTop={{ base: "50", md: "-80px" }}
-    marginLeft={{ base: "10px", md: "650px" }}
+    marginTop={{ base: "30px", md: "0" }}
+    marginLeft={{ base: "350px", md: "450px" }}
   >
     <Text
       fontSize={{ base: "54px", md: "24px" }}
@@ -38,10 +39,11 @@ export default function LandingPage() {
     </Text>
 
     <Text
-      fontSize={{ base: "140px", md: "100px" }}
+      fontSize={{ base: "100px", md: "100px" }}
       color= {{base: "black", md: "black"}}
       fontWeight="bold"
       fontFamily="Pacifico"
+      textAlign= "center"
       
     >
       Países!
@@ -50,11 +52,11 @@ export default function LandingPage() {
 
   <Box
     textAlign={{ base: "center", md: "justify" }}
-    marginLeft={{ base: "200px", md: "670px" }}
-    marginTop={{ base: "0px", md: "60px" }}
+    marginLeft={{ base: "500px", md: "650px" }}
+    marginTop={{ base: "0px", md: "0px" }}
     
   >
-    <Text color="black" width={{ base: "70%", md: "95%" }} fontSize= "13px"
+    <Text color="black" width={{ base: "70%", md: "60%" }} fontSize= "13px"
 
     fontStyle= "italic">
       Países es una app que te permitirá ver la descripción de cada País, en la
@@ -64,7 +66,7 @@ export default function LandingPage() {
     </Text>
   </Box>
 
-  <Box marginTop={{ base: "20px", md: "20px" }} marginLeft={{ base: "100px", md: "650px" }}>
+  <Box marginTop={{ base: "180px", md: "40px" }} marginLeft={{ base: "450px", md: "650px" }}>
     <Link to={"/Home"}>
       <Button size={{ base: "lg", md: "xl" }} colorScheme="black" _hover={{
     fontSize: "70px",
