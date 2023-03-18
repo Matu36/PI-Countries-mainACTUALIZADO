@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Box, Flex, Text, Button,  } from "@chakra-ui/react";
+import { Box,  Text, Button,  } from "@chakra-ui/react";
 import count from "../../img/pais.jpg";
 import "../fonts.css";
 
@@ -83,20 +83,6 @@ export default function LandingPage() {
       </Button>
     </Link>
   </Box>
-<Flex>
-  <Box 
-    position={{ base: "relative", md: "absolute" }}
-    bottom={{ base: "-60px", md: "0" }}
-    left={{ base: "210px", md: "unset" }}
-    right={{ base: "0px", md: "0px" }}
-    textAlign={{ base: "center", md: "right" }}
-    marginTop={{ base: "20px", md: "280px" }}
-  >
-   
-    
-    <Text color="black"> Creado Por Matías Pineda</Text>
-    </Box>
-    
-  </Flex>
+
 </Box>
   )}
