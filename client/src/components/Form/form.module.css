@@ -126,10 +126,19 @@
         border-radius: 10px;
 }
 
+@media (max-width: 767px) {
+  .btn {
+    font-size: 10px;
+    width: 100px;
+    height: 30px;
+  }
+}
+
 .btn:hover {
     color: yellow;
     background-color:black;
     cursor: pointer;
+  
 }
 
 .rinput {
