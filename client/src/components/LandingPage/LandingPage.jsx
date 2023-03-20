@@ -11,10 +11,11 @@ export default function LandingPage() {
     <Box display= "flex"
   background="linear-gradient(to right, yellow, #9E9E9E)"
   minHeight="100vh"
-  height= {{base:"100vh", md: "100%"}} width= {{base: "130vh", md:"100%"}}
+  marginLeft={{}}
+  height= {{base:"100vh", md: "100%"}} width= {{base: "80vh", md:"100%"}}
 >
     <Box display= "flex"
-    height= {{base:"100vh", md: "100%"}} width= {{base: "130vh", md:"100%"}} 
+    height= {{base:"100vh", md: "100%"}} width= {{base: "80vh", md:"100%"}} 
      //backgroundColor= "yellow" 
      marginTop= {{base:"-5rem", md: "-5rem"}}>
      
@@ -22,7 +23,7 @@ export default function LandingPage() {
  <Flex flexDirection={{ base: "column", md: "row" }}>
   <Box
   
-  height= {{base:"100vh"}}width= {{base: "100vh", md:"100%"}} 
+  height= {{base:"100vh"}}width= {{base: "80vh", md:"100%"}} 
     marginTop= "4rem"
   marginLeft= "1rem" padding= "4rem">
   <Player 
@@ -35,8 +36,8 @@ export default function LandingPage() {
   <Box>
   <Box width= "60%"
     textAlign= "center"
-    marginTop={{ base: "-10rem", md: "5rem" }}
-    marginLeft={{ base: "10rem", md: "10px" }}
+    marginTop={{ base: "-7rem", md: "5rem" }}
+    marginLeft={{ base: "5rem", md: "10px" }}
   >
     <Text
       fontSize={{ base: "54px", md: "35px" }}
@@ -67,9 +68,9 @@ export default function LandingPage() {
     marginTop={{ base: "0px", md: "0px" }}
     
   >
-    <Box color="black" width={{ base: "100%", md: "60%" }} fontSize= "16px"
+    <Box color="black" width={{ base: "90%", md: "60%" }} fontSize= "16px"
    
-    marginTop= {{base: "0rem", md:"3rem"}}>
+    marginTop= {{base: "2rem", md:"3rem"}}>
     <Text 
 
     fontStyle= "italic">
@@ -79,6 +80,8 @@ export default function LandingPage() {
       turísticas de cada país en particular.
     </Text>
     <br />
+    </Box>
+    <Box>
     <Link to={"/Home"}>
   <Button 
     size={{ base: "sm", md: "lg" }} 
@@ -90,7 +93,7 @@ export default function LandingPage() {
       transform: "translateY(-5px)", // Hacemos que el botón se levante un poco al pasar el cursor
       background: "linear-gradient(to right, #FFDAB9, #FFA07A)" // Agregamos un gradiente de color al fondo
     }}
-    marginLeft= {{base: "35rem", md: "7rem"}}
+    marginLeft= {{base: "-3rem", md: "7rem"}}
     marginTop= {{base: "-20rem", md: "0rem"}}
     boxShadow="x4" 
     padding={{ base: "5px", md: "5px" }} 
@@ -101,7 +104,7 @@ export default function LandingPage() {
     transition="all 0.3s ease-in-out" // Agregamos una transición suave
   >
     <Text
-      fontSize={{ base: "35px", md: "35px" }}
+      fontSize={{ base: "25px", md: "35px" }}
       fontFamily="monospace"
       fontWeight= "extrabold"
     >
