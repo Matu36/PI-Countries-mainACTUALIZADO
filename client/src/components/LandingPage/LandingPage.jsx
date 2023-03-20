@@ -16,7 +16,7 @@ export default function LandingPage() {
     <Box display= "flex"
     height= {{base:"100vh", md: "100%"}} width= {{base: "130vh", md:"100%"}} 
      //backgroundColor= "yellow" 
-     marginTop= {{base:"-5rem", md: "0"}}>
+     marginTop= {{base:"-5rem", md: "-5rem"}}>
      
      
  <Flex flexDirection={{ base: "column", md: "row" }}>
@@ -50,7 +50,7 @@ export default function LandingPage() {
     </Text>
 
     <Text
-      fontSize={{ base: "100px", md: "130px" }}
+      fontSize={{ base: "100px", md: "120px" }}
       color= {{base: "black", md: "black"}}
       fontWeight="bold"
       fontFamily="Pacifico"
@@ -81,7 +81,7 @@ export default function LandingPage() {
     <br />
     <Link to={"/Home"}>
   <Button 
-    size={{ base: "lg", md: "xl" }} 
+    size={{ base: "sm", md: "lg" }} 
     colorScheme="white" 
     _hover={{
       fontSize: "70px",
@@ -90,7 +90,7 @@ export default function LandingPage() {
       transform: "translateY(-5px)", // Hacemos que el botón se levante un poco al pasar el cursor
       background: "linear-gradient(to right, #FFDAB9, #FFA07A)" // Agregamos un gradiente de color al fondo
     }}
-    marginLeft= {{base: "35rem", md: "9rem"}}
+    marginLeft= {{base: "35rem", md: "7rem"}}
     marginTop= {{base: "-20rem", md: "0rem"}}
     boxShadow="x4" 
     padding={{ base: "5px", md: "5px" }} 
@@ -101,7 +101,7 @@ export default function LandingPage() {
     transition="all 0.3s ease-in-out" // Agregamos una transición suave
   >
     <Text
-      fontSize={{ base: "45px", md: "35px" }}
+      fontSize={{ base: "35px", md: "35px" }}
       fontFamily="monospace"
       fontWeight= "extrabold"
     >
