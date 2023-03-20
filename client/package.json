@@ -6,6 +6,7 @@
     "@chakra-ui/react": "^1.6.8",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@lottiefiles/react-lottie-player": "^3.5.3",
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^13.1.1",

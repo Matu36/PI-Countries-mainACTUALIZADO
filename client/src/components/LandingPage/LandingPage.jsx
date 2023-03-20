@@ -1,34 +1,45 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Box,  Text, Button,  } from "@chakra-ui/react";
-import count from "../../img/pases.jpg";
+import { Box,  Text, Button, Flex,  } from "@chakra-ui/react";
+//import count from "../../img/pases.jpg";
+import { Player } from '@lottiefiles/react-lottie-player';
 import "../fonts.css";
 
 export default function LandingPage() {
   return (
-    <Box
-  display="flex"
- 
-  alignItems="center"
-  justifyContent="center"
-  height={{ base: "100vh", md: "100vh" }}
-   backgroundImage={count}
-  //backgroundSize="cover"
-  backgroundPosition={{ base: "center", md: "left" }}
-  //backgroundAttachment="fixed"
-  backgroundSize={{base: "cover", md:"100% 100%"}}
-  filter="contrast(100%)"
-  backgroundRepeat="no-repeat"
-  width={{base: "100vh", md: "217vh"}}
-  
+    
+    <Box display= "flex"
+  background="linear-gradient(to right, yellow, #9E9E9E)"
+  minHeight="100vh"
+  height= {{base:"100vh", md: "100%"}} width= {{base: "130vh", md:"100%"}}
 >
-  {/* <Box
+    <Box display= "flex"
+    height= {{base:"100vh", md: "100%"}} width= {{base: "130vh", md:"100%"}} 
+     //backgroundColor= "yellow" 
+     marginTop= {{base:"-5rem", md: "0"}}>
+     
+     
+ <Flex flexDirection={{ base: "column", md: "row" }}>
+  <Box
+  
+  height= {{base:"100vh"}}width= {{base: "100vh", md:"100%"}} 
+    marginTop= "4rem"
+  marginLeft= "1rem" padding= "4rem">
+  <Player 
+        src= 'https://assets6.lottiefiles.com/private_files/lf30_ahlkj7sh.json'
+        className="player"
+        loop
+        autoplay
+      />
+  </Box>
+  <Box>
+  <Box width= "60%"
     textAlign= "center"
-    marginTop={{ base: "30px", md: "0" }}
-    marginLeft={{ base: "350px", md: "450px" }}
+    marginTop={{ base: "-10rem", md: "5rem" }}
+    marginLeft={{ base: "10rem", md: "10px" }}
   >
     <Text
-      fontSize={{ base: "54px", md: "24px" }}
+      fontSize={{ base: "54px", md: "35px" }}
       color="black"
       fontWeight="bold"
       fontFamily="Pacifico"
@@ -39,7 +50,7 @@ export default function LandingPage() {
     </Text>
 
     <Text
-      fontSize={{ base: "100px", md: "100px" }}
+      fontSize={{ base: "100px", md: "130px" }}
       color= {{base: "black", md: "black"}}
       fontWeight="bold"
       fontFamily="Pacifico"
@@ -52,11 +63,14 @@ export default function LandingPage() {
 
   <Box
     textAlign={{ base: "center", md: "justify" }}
-    marginLeft={{ base: "500px", md: "650px" }}
+    marginLeft={{ base: "0px", md: "0" }}
     marginTop={{ base: "0px", md: "0px" }}
     
   >
-    <Text color="black" width={{ base: "70%", md: "60%" }} fontSize= "13px"
+    <Box color="black" width={{ base: "100%", md: "60%" }} fontSize= "16px"
+   
+    marginTop= {{base: "0rem", md:"3rem"}}>
+    <Text 
 
     fontStyle= "italic">
       Países es una app que te permitirá ver la descripción de cada País, en la
@@ -64,10 +78,8 @@ export default function LandingPage() {
       cosas mas. No solo eso, sino que también nos permitirá agregar actividades
       turísticas de cada país en particular.
     </Text>
-  </Box> */}
-
-  
-<Link to={"/Home"}>
+    <br />
+    <Link to={"/Home"}>
   <Button 
     size={{ base: "lg", md: "xl" }} 
     colorScheme="white" 
@@ -78,13 +90,13 @@ export default function LandingPage() {
       transform: "translateY(-5px)", // Hacemos que el botón se levante un poco al pasar el cursor
       background: "linear-gradient(to right, #FFDAB9, #FFA07A)" // Agregamos un gradiente de color al fondo
     }}
+    marginLeft= {{base: "35rem", md: "9rem"}}
+    marginTop= {{base: "-20rem", md: "0rem"}}
     boxShadow="x4" 
     padding={{ base: "5px", md: "5px" }} 
     borderRadius= "15px"
-    position="fixed"
-    bottom={{base: "30px", md:"10px"}}
-    right= {{base: "40px", md:"100px"}}
     borderColor="blue"
+    backgroundColor= "blue.700"
     color="black"
     transition="all 0.3s ease-in-out" // Agregamos una transición suave
   >
@@ -97,7 +109,16 @@ export default function LandingPage() {
     </Text>
   </Button>
 </Link>
+    </Box>
+  </Box>
+  </Box>
+  </Flex>
+
+  
+
 </Box>
+</Box>
+
   )}
 
 
