@@ -12,10 +12,10 @@ export default function LandingPage() {
   background="linear-gradient(to right, #9E9E9E, yellow )"
   minHeight="100vh"
   
-  height= {{base:"80vh", md: "100%"}} width= {{base: "65vh", md:"100%"}}
+  height= {{base:"110vh", md: "100%"}} width= {{base: "65vh", md:"100%"}}
 >
     <Box display= "flex"
-    height= {{base:"70vh", md: "100%"}} width= {{base: "70vh", md:"100%"}} 
+    height= {{base:"100%", md: "100%"}} width= {{base: "70vh", md:"100%"}} 
      //backgroundColor= "yellow" 
      marginTop= {{base:"-5rem", md: "-5rem"}}
      marginLeft= {{base: "-1.5rem", md: "1rem"}}>
