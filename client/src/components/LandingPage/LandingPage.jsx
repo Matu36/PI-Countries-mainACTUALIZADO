@@ -12,13 +12,13 @@ export default function LandingPage() {
   background="linear-gradient(to right, #9E9E9E, yellow )"
   minHeight="100vh"
   
-  height= {{base:"90vh", md: "100%"}} width= {{base: "55vh", md:"100%"}}
+  height= {{base:"80vh", md: "100%"}} width= {{base: "65vh", md:"100%"}}
 >
     <Box display= "flex"
-    height= {{base:"100vh", md: "100%"}} width= {{base: "70vh", md:"100%"}} 
+    height= {{base:"70vh", md: "100%"}} width= {{base: "70vh", md:"100%"}} 
      //backgroundColor= "yellow" 
      marginTop= {{base:"-5rem", md: "-5rem"}}
-     marginLeft= {{base: "-3rem", md: "1rem"}}>
+     marginLeft= {{base: "-1.5rem", md: "1rem"}}>
       
      
      
