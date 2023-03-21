@@ -11,8 +11,8 @@ export default function LandingPage() {
     <Box display= "flex"
   background="linear-gradient(to right, #9E9E9E, yellow )"
   minHeight="100vh"
-  marginLeft={{}}
-  height= {{base:"110vh", md: "100%"}} width= {{base: "75vh", md:"100%"}}
+  
+  height= {{base:"135vh", md: "100%"}} width= {{base: "75vh", md:"100%"}}
 >
     <Box display= "flex"
     height= {{base:"100vh", md: "100%"}} width= {{base: "70vh", md:"100%"}} 
@@ -20,7 +20,7 @@ export default function LandingPage() {
      marginTop= {{base:"-5rem", md: "-5rem"}}>
      
      
- <Flex marginLeft= {{base: "-4rem", md: "0rem"}}
+ <Flex 
  
   flexDirection={{ base: "column", md: "row" }}>
   <Box
@@ -43,7 +43,7 @@ export default function LandingPage() {
     marginLeft={{ base: "5rem", md: "10px" }}
   >
     <Text
-      fontSize={{ base: "54px", md: "35px" }}
+      fontSize={{ base: "40px", md: "35px" }}
       color="black"
       fontWeight="bold"
       fontFamily="Pacifico"
@@ -54,7 +54,7 @@ export default function LandingPage() {
     </Text>
 
     <Text
-      fontSize={{ base: "100px", md: "120px" }}
+      fontSize={{ base: "80px", md: "120px" }}
       color= {{base: "black", md: "black"}}
       fontWeight="bold"
       fontFamily="Pacifico"
@@ -66,8 +66,8 @@ export default function LandingPage() {
   </Box>
 
   <Box
-    textAlign={{ base: "center", md: "justify" }}
-    marginLeft={{ base: "4rem", md: "0" }}
+    textAlign={{ base: "justify", md: "justify" }}
+    marginLeft={{ base: "6rem", md: "0" }}
     marginTop={{ base: "0px", md: "0px" }}
     
   >
@@ -96,8 +96,8 @@ export default function LandingPage() {
       transform: "translateY(-5px)", // Hacemos que el botón se levante un poco al pasar el cursor
       background: "linear-gradient(to right, #FFDAB9, #FFA07A)" // Agregamos un gradiente de color al fondo
     }}
-    marginLeft= {{base: "-7rem", md: "7rem"}}
-    marginTop= {{base: "-25rem", md: "0rem"}}
+    marginLeft= {{base: "5rem", md: "7rem"}}
+    marginTop= {{base: "-28rem", md: "0rem"}}
     boxShadow="x4" 
     padding={{ base: "5px", md: "5px" }} 
     borderRadius= "15px"
