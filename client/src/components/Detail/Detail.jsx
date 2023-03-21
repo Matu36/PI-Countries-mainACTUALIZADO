@@ -45,7 +45,7 @@ export default function Detail() {
             <hr />
             <div className= {style.content}>
               <div className= {style.info}>
-                <Text fontSize={{base: "16px", md: "36px"}} fontWeight="extrabold"> Características</Text>
+                <Text fontSize={{base: "15px", md: "36px"}} fontWeight="extrabold"> Características</Text>
                 <hr />
                 <div>
                   <span className= {style.span}>Continente: </span> 
