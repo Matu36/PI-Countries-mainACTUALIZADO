@@ -9,7 +9,7 @@ export default function LandingPage() {
   return (
     
     <Box display= "flex"
-  background="linear-gradient(to right, yellow, #9E9E9E)"
+  background="linear-gradient(to right, #9E9E9E, yellow )"
   minHeight="100vh"
   marginLeft={{}}
   height= {{base:"110vh", md: "100%"}} width= {{base: "75vh", md:"100%"}}
@@ -25,7 +25,8 @@ export default function LandingPage() {
   flexDirection={{ base: "column", md: "row" }}>
   <Box
   
-  height= {{base:"100vh"}}width= {{base: "80vh", md:"100%"}} 
+
+  height= {{base:"100vh"}}width= {{base: "65vh", md:"100%"}} 
     marginTop= "4rem"
   marginLeft= "1rem" padding= "4rem">
   <Player 
@@ -70,7 +71,7 @@ export default function LandingPage() {
     marginTop={{ base: "0px", md: "0px" }}
     
   >
-    <Box color="black" width={{ base: "80%", md: "60%" }} fontSize= "16px"
+    <Box color="black" width={{ base: "70%", md: "60%" }} fontSize= "16px"
    
     marginTop= {{base: "2rem", md:"3rem"}}>
     <Text 
@@ -96,12 +97,12 @@ export default function LandingPage() {
       background: "linear-gradient(to right, #FFDAB9, #FFA07A)" // Agregamos un gradiente de color al fondo
     }}
     marginLeft= {{base: "-7rem", md: "7rem"}}
-    marginTop= {{base: "-23rem", md: "0rem"}}
+    marginTop= {{base: "-25rem", md: "0rem"}}
     boxShadow="x4" 
     padding={{ base: "5px", md: "5px" }} 
     borderRadius= "15px"
     borderColor="blue"
-    backgroundColor= "blue.700"
+    backgroundColor= "orange.400"
     color="black"
     transition="all 0.3s ease-in-out" // Agregamos una transición suave
   >
