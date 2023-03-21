@@ -12,15 +12,17 @@ export default function LandingPage() {
   background="linear-gradient(to right, yellow, #9E9E9E)"
   minHeight="100vh"
   marginLeft={{}}
-  height= {{base:"100vh", md: "100%"}} width= {{base: "80vh", md:"100%"}}
+  height= {{base:"110vh", md: "100%"}} width= {{base: "75vh", md:"100%"}}
 >
     <Box display= "flex"
-    height= {{base:"100vh", md: "100%"}} width= {{base: "80vh", md:"100%"}} 
+    height= {{base:"100vh", md: "100%"}} width= {{base: "70vh", md:"100%"}} 
      //backgroundColor= "yellow" 
      marginTop= {{base:"-5rem", md: "-5rem"}}>
      
      
- <Flex flexDirection={{ base: "column", md: "row" }}>
+ <Flex marginLeft= {{base: "-4rem", md: "0rem"}}
+ 
+  flexDirection={{ base: "column", md: "row" }}>
   <Box
   
   height= {{base:"100vh"}}width= {{base: "80vh", md:"100%"}} 
@@ -64,11 +66,11 @@ export default function LandingPage() {
 
   <Box
     textAlign={{ base: "center", md: "justify" }}
-    marginLeft={{ base: "0px", md: "0" }}
+    marginLeft={{ base: "4rem", md: "0" }}
     marginTop={{ base: "0px", md: "0px" }}
     
   >
-    <Box color="black" width={{ base: "90%", md: "60%" }} fontSize= "16px"
+    <Box color="black" width={{ base: "80%", md: "60%" }} fontSize= "16px"
    
     marginTop= {{base: "2rem", md:"3rem"}}>
     <Text 
@@ -93,8 +95,8 @@ export default function LandingPage() {
       transform: "translateY(-5px)", // Hacemos que el botón se levante un poco al pasar el cursor
       background: "linear-gradient(to right, #FFDAB9, #FFA07A)" // Agregamos un gradiente de color al fondo
     }}
-    marginLeft= {{base: "-3rem", md: "7rem"}}
-    marginTop= {{base: "-20rem", md: "0rem"}}
+    marginLeft= {{base: "-7rem", md: "7rem"}}
+    marginTop= {{base: "-23rem", md: "0rem"}}
     boxShadow="x4" 
     padding={{ base: "5px", md: "5px" }} 
     borderRadius= "15px"
