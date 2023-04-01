@@ -105,3 +105,4 @@ export default function Detail() {
 
 
 //toLocaleString => convierte un numero en un string con separadores de miles
+//deploy
