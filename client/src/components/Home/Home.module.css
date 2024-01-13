@@ -56,8 +56,10 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap:0.2rem;
-    padding: 0.5rem 0;
+    gap:1rem;
+    padding-top: 1.5rem;
+   
+
 }
 
 

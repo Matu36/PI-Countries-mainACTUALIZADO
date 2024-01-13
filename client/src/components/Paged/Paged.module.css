@@ -1,81 +1,77 @@
 .container {
     display: none;
-}
-
-@media (min-width: 1000px) 
-{.container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 1rem 0;
-}}
-
-
-
-.spancontain {
-    backdrop-filter: blur(16px) saturate(180%);
-      background-color: wheat;
-      font-weight: bold;
-      color: var(--text-color);
+  }
+  
+  @media (min-width: 1000px) {
+    .container {
       display: flex;
+      flex-direction: row;
       justify-content: center;
-      align-items: center;
-      font-size: 1rem;
-      border-radius: 50%;
-      margin: 0.2rem;
-      min-width: 2rem;
-      padding: 0 0.3rem;
-      height: 2rem;
-      text-decoration: none;
-      cursor: pointer;
-
-}
-
-.spancontain:hover {
-    background-color: lightcoral;
-    color: #fff;
-}
-
-
-.pn {
+      flex-wrap: wrap;
+      margin: 1rem 0;
+    }
+  }
+  
+  .spancontain {
+    backdrop-filter: blur(8px) saturate(120%); /* Ajustado para un efecto más suave */
+    background-color: #3498db; /* Azul brillante */
+    font-weight: bold;
+    color: #fff; /* Texto blanco */
     display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem auto;
-  width: 100%;
-  background-color:whitesmoke;
-  padding: 0.4rem;
-  border-radius: 1rem;
-}
-
-.spanpn {
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    border-radius: 50%;
+    margin: 0.2rem;
+    min-width: 2rem;
+    padding: 0 0.3rem;
+    height: 2rem;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .spancontain:hover {
+    background-color: #2980b9; /* Azul más oscuro al hacer hover */
+  }
+  
+  .pn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    width: 100%;
+    background-color: #ecf0f1; /* Gris claro */
+    padding: 0.4rem;
+    border-radius: 1rem;
+  }
+  
+  .spanpn {
     text-align: center;
     font-size: 1.2rem;
     font-weight: bold;
-    color: wheat;
+    color: #3498db; /* Azul brillante */
     width: 100%;
-}
-
-.button {
-    backdrop-filter: blur(16px) saturate(180%);
-  background-color: wheat;
-  color: var(--text-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1rem;
-  border-radius: 50%;
-  margin: 0.2rem;
-  min-width: 2rem;
-  padding: 0 0.3rem;
-  height: 2rem;
-  border-style: hidden;
-  cursor: pointer;
-}
-
-.button:hover {
-    background-color: lightcoral;
-    color: #fff;
-}
+  }
+  
+  .button {
+    backdrop-filter: blur(8px) saturate(120%); /* Ajustado para un efecto más suave */
+    background-color: #e74c3c; /* Rojo */
+    color: #fff; /* Texto blanco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    border-radius: 50%;
+    margin: 0.2rem;
+    min-width: 2rem;
+    padding: 0 0.3rem;
+    height: 2rem;
+    border-style: hidden;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #c0392b; /* Rojo más oscuro al hacer hover */
+  }
+  
 

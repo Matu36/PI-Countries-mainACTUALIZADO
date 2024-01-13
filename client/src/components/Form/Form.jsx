@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom"; 
-import trash from "../../img/trash.png"
+import { useHistory } from "react-router-dom";
+import trash from "../../img/trash.png";
 import { Link } from "react-router-dom";
 import {
   createActivity,
@@ -10,10 +10,10 @@ import {
   getAllActivity,
   orderCountries,
 } from "../../actions/index";
-import style from "../Form/form.module.css"
+import style from "../Form/form.module.css";
 import bbuton from "../../img/BBUTTON.PNG";
-import Globo from "../../img/create.jpg";
-import { Box,Text, Image  } from "@chakra-ui/react";
+import { Box, Text, Image } from "@chakra-ui/react";
+import { MdArrowBackIos } from "react-icons/md";
 
 const validate = (activity, activities = []) => {
   let errors = {};
@@ -27,11 +27,11 @@ const validate = (activity, activities = []) => {
   }
   if (!activity.difficulty) errors.difficulty = "Campo obligatorio";
   if (!activity.duration) errors.duration = "Campo obligatorio";
-  if (parseInt(activity.duration) < 1 || parseInt(activity.duration) > 30) // convierte string en numero
+  if (parseInt(activity.duration) < 1 || parseInt(activity.duration) > 30)
+    // convierte string en numero
     errors.duration = "La duración debe ser mayor a 0 y menor que 30";
   if (!activity.seasson) errors.seasson = "Campo obligatorio";
-  if (activity.countries.length === 0)
-    errors.countries = "Campo obligatorio";
+  if (activity.countries.length === 0) errors.countries = "Campo obligatorio";
 
   return errors;
 };
@@ -62,7 +62,7 @@ export default function Form() {
   });
 
   const arrActivities = allActivity.map((x) => x.name); // array de actividades por nombre
-                                                        // para validar que no se repitan
+  // para validar que no se repitan
   const handleOnChange = (e) => {
     setActivity({
       ...activity,
@@ -70,7 +70,7 @@ export default function Form() {
     });
 
     setErrors(
-      validate({ ...activity, [e.target.name]: e.target.value }, arrActivities) 
+      validate({ ...activity, [e.target.name]: e.target.value }, arrActivities)
     );
   };
 
@@ -87,15 +87,16 @@ export default function Form() {
         validate(
           {
             ...activity,
-            countries: [...activity.countries, e.target.value], 
+            countries: [...activity.countries, e.target.value],
           },
-          arrActivities   
+          arrActivities
         )
       );
     }
   };
   const handleCheck = (e) => {
-    if (e.target.checked) {    // si esta seleccionado lo agrega al array
+    if (e.target.checked) {
+      // si esta seleccionado lo agrega al array
       setActivity({
         ...activity,
         [e.target.name]: e.target.value,
@@ -105,9 +106,9 @@ export default function Form() {
       validate(
         {
           ...activity,
-          [e.target.name]: e.target.value,  // si no esta seleccionado lo elimina del array
+          [e.target.name]: e.target.value, // si no esta seleccionado lo elimina del array
         },
-        arrActivities            // array de actividades para validar que no se repitan
+        arrActivities // array de actividades para validar que no se repitan
       )
     );
   };
@@ -115,13 +116,13 @@ export default function Form() {
   const handleDelete = (country) => {
     setActivity({
       ...activity,
-      countries: activity.countries.filter((ctry) => ctry !== country),  // elimina el pais del array
+      countries: activity.countries.filter((ctry) => ctry !== country), // elimina el pais del array
     });
     setErrors(
       validate(
         {
           ...activity,
-          countries: activity.countries.filter((ctry) => ctry !== country), 
+          countries: activity.countries.filter((ctry) => ctry !== country),
         },
         arrActivities
       )
@@ -136,9 +137,9 @@ export default function Form() {
       activity.duration &&
       activity.seasson &&
       activity.countries.length &&
-      !Object.keys(errors).length  // si no hay errores
+      !Object.keys(errors).length // si no hay errores
     ) {
-      dispatch(createActivity(activity));    // crea la actividad
+      dispatch(createActivity(activity)); // crea la actividad
       alert("Actividad creada");
       setActivity({
         name: "",
@@ -147,34 +148,40 @@ export default function Form() {
         seasson: "",
         countries: [],
       });
-      history.push("/home");   //redirecciona a home si se crea la actividad
+      history.push("/home"); //redirecciona a home si se crea la actividad
     } else {
       alert("Por favor, complete los campos o revise los errores");
     }
   };
 
   return (
-    <form className= {style.container} onSubmit={handleOnSubmit}>
+    <form className={style.container} onSubmit={handleOnSubmit}>
       <Link to="/home">
-          <img className = {style.bbuton} src={bbuton} alt="ATRAS" />
-        </Link>
-        <Box>
-        <Image className = {style.globo}src={Globo} alt="Globo" />
-        </Box>
-      <Box  
-      flexDirection={{ base: "column", md: "row" }}
-      justifyContent={{ base: "flex-start", md: "center" }}
-        marginLeft= {{base: "0", md: "-150px"}}
-        marginTop= {{base: "50px", md: ""}}  >
-        <Text fontSize= {{base: "30px", md: "40px"}} color= "yellow" fontWeight= "extrabold"
-        textShadow="0 0 2px black, 0 0 5px grey"> Actividad turística</Text>
-        
-       <Box marginTop= "50px">
-         
-          <label className= {style.label}>
-            <Text fontSize= "20px" color= "yellow" fontWeight= "extrabold"
-            textShadow="0 0 2px black, 0 0 5px grey">País</Text>
-            <select className= {style.select} name="countries" onChange={handleSelect}>
+        <MdArrowBackIos className={style.bbuton} src={bbuton} alt="ATRAS" />
+      </Link>
+
+      <Box
+        flexDirection={{ base: "column", md: "row" }}
+        justifyContent={{ base: "flex-start", md: "center" }}
+        marginTop={{ base: "1rem", md: "0" }}
+        marginLeft={{ base: "1rem", md: "6rem" }}
+        padding="20px"
+      >
+        <Box marginTop="50px">
+          <label className={style.label}>
+            <Text
+              fontSize="20px"
+              fontWeight="extrabold"
+              textShadow="0 0 2px black, 0 0 5px grey"
+              marginBottom="5px"
+            >
+              País
+            </Text>
+            <select
+              className={style.select}
+              name="countries"
+              onChange={handleSelect}
+            >
               <option value="">Seleccionar País</option>
               {countries.map((country, index) => (
                 <option key={index} value={country.name}>
@@ -182,12 +189,15 @@ export default function Form() {
                 </option>
               ))}
             </select>
-            {errors.countries && <div className= {style.Error}>{errors.countries}</div>}
+            {errors.countries && (
+              <div className={style.Error}>{errors.countries}</div>
+            )}
             <div>
               {activity.countries.map((country, index) => (
-                <div className= {style.country} key={index}>
+                <div className={style.country} key={index}>
                   {country}
-                  <img className= {style.trash}
+                  <img
+                    className={style.trash}
                     src={trash}
                     alt="trash"
                     onClick={() => handleDelete(country)}
@@ -196,12 +206,19 @@ export default function Form() {
               ))}
             </div>
           </label>
-          </Box>
+        </Box>
         <div>
-          <label className= {style.label}>
-            <Text fontSize= "20px" color= "yellow" fontWeight= "extrabold"
-            textShadow="0 0 2px black, 0 0 5px grey" >Nombre</Text>
-            <input className= {style.input}
+          <label className={style.label}>
+            <Text
+              marginBottom="5px"
+              fontSize="20px"
+              fontWeight="extrabold"
+              textShadow="0 0 2px black, 0 0 5px grey"
+            >
+              Nombre
+            </Text>
+            <input
+              className={style.input}
               type="text"
               name="name"
               value={activity.name}
@@ -213,10 +230,17 @@ export default function Form() {
           </label>
         </div>
         <div>
-          <label className= {style.label}>
-          <Text fontSize= "20px" color= "yellow" fontWeight= "extrabold" 
-          textShadow="0 0 2px black, 0 0 5px grey" >Duración</Text>
-            <input className= {style.input}
+          <label className={style.label}>
+            <Text
+              marginBottom="5px"
+              fontSize="20px"
+              fontWeight="extrabold"
+              textShadow="0 0 2px black, 0 0 5px grey"
+            >
+              Duración
+            </Text>
+            <input
+              className={style.input}
               type="number"
               name="duration"
               value={activity.duration}
@@ -225,17 +249,30 @@ export default function Form() {
               onChange={handleOnChange}
             />
 
-            {errors.duration && <div className = {style.Error}>{errors.duration}</div>}
+            {errors.duration && (
+              <div className={style.Error}>{errors.duration}</div>
+            )}
           </label>
         </div>
 
         <div>
-          <label className= {style.label}>
-          <Text fontSize= "20px" color= "yellow" fontWeight= "extrabold"
-          textShadow="0 0 2px black, 0 0 5px grey" >Dificultad</Text>
-            <div className= {style.radio}>
-            <Box color= "black" fontSize= {{base: "10px", md: "16px"}}>
-                <input className= {style.rinput}
+          <label className={style.label}>
+            <Text
+              marginBottom="5px"
+              fontSize="20px"
+              fontWeight="extrabold"
+              textShadow="0 0 2px black, 0 0 5px grey"
+            >
+              Dificultad
+            </Text>
+            <div className={style.radio}>
+              <Box
+                color="black"
+                fontSize={{ base: "10px", md: "16px" }}
+                marginBottom="15px"
+              >
+                <input
+                  className={style.rinput}
                   type="radio"
                   name="difficulty"
                   value="1"
@@ -243,17 +280,20 @@ export default function Form() {
                 />
                 Muy baja
               </Box>
-              <Box color= "black" fontSize= {{base: "10px", md: "16px"}}>
-                <input className= {style.rinput}
+
+              <Box color="black" fontSize={{ base: "10px", md: "16px" }}>
+                <input
+                  className={style.rinput}
                   type="radio"
                   name="difficulty"
                   value="2"
                   onChange={handleCheck}
                 />
                 baja
-                </Box>
-                <Box color= "black" fontSize= {{base: "10px", md: "16px"}}>
-                <input className= {style.rinput}
+              </Box>
+              <Box color="black" fontSize={{ base: "10px", md: "16px" }}>
+                <input
+                  className={style.rinput}
                   type="radio"
                   name="difficulty"
                   value="3"
@@ -261,8 +301,9 @@ export default function Form() {
                 />
                 Media
               </Box>
-              <Box color= "black" fontSize= {{base: "10px", md: "16px"}}>
-                <input className= {style.rinput}
+              <Box color="black" fontSize={{ base: "10px", md: "16px" }}>
+                <input
+                  className={style.rinput}
                   type="radio"
                   name="difficulty"
                   value="4"
@@ -270,8 +311,9 @@ export default function Form() {
                 />
                 alta
               </Box>
-              <Box color= "black" fontSize= {{base: "10px", md: "16px"}}>
-                <input className= {style.rinput}
+              <Box color="black" fontSize={{ base: "10px", md: "16px" }}>
+                <input
+                  className={style.rinput}
                   type="radio"
                   name="difficulty"
                   value="5"
@@ -280,16 +322,25 @@ export default function Form() {
                 Muy alta
               </Box>
             </div>
-            {errors.difficulty && <div className={style.Error}>{errors.difficulty}</div>}
+            {errors.difficulty && (
+              <div className={style.Error}>{errors.difficulty}</div>
+            )}
           </label>
         </div>
         <div>
-          <label className= {style.label}>
-          <Text fontSize= "20px" color= "yellow" fontWeight= "extrabold"
-          textShadow="0 0 2px black, 0 0 5px grey" >Temporada</Text>
-            <div className= {style.radio}>
-            <Box color= "black" fontSize= {{base: "10px", md: "16px"}}>
-                <input className= {style.rinput}
+          <label className={style.label}>
+            <Text
+              marginBottom="5px"
+              fontSize="20px"
+              fontWeight="extrabold"
+              textShadow="0 0 2px black, 0 0 5px grey"
+            >
+              Temporada
+            </Text>
+            <div className={style.radio}>
+              <Box color="black" fontSize={{ base: "10px", md: "16px" }}>
+                <input
+                  className={style.rinput}
                   type="radio"
                   name="seasson"
                   value="Verano"
@@ -297,8 +348,10 @@ export default function Form() {
                 />
                 Verano
               </Box>
-              <Box color= "black" fontSize= {{base: "10px", md: "16px"}}>
-                <input className= {style.rinput}t
+              <Box color="black" fontSize={{ base: "10px", md: "16px" }}>
+                <input
+                  className={style.rinput}
+                  t
                   type="radio"
                   name="seasson"
                   value="Otoño"
@@ -306,8 +359,9 @@ export default function Form() {
                 />
                 Otoño
               </Box>
-              <Box color= "black" fontSize= {{base: "10px", md: "16px"}}>
-                <input className= {style.rinput}
+              <Box color="black" fontSize={{ base: "10px", md: "16px" }}>
+                <input
+                  className={style.rinput}
                   type="radio"
                   name="seasson"
                   value="Invierno"
@@ -315,8 +369,9 @@ export default function Form() {
                 />
                 Invierno
               </Box>
-              <Box color= "black" fontSize= {{base: "10px", md: "16px"}}>
-                <input className= {style.rinput}
+              <Box color="black" fontSize={{ base: "10px", md: "16px" }}>
+                <input
+                  className={style.rinput}
                   type="radio"
                   name="seasson"
                   value="Primavera"
@@ -325,16 +380,16 @@ export default function Form() {
                 Primavera
               </Box>
             </div>
-            {errors.seasson && <div className={style.Error}>{errors.seasson}</div>}
+            {errors.seasson && (
+              <div className={style.Error}>{errors.seasson}</div>
+            )}
           </label>
         </div>
-        
-          <button className= {style.btn} type="submit" tertiary>
-            Crear Actividad
-          </button>
-          </Box>
-       
-      
+
+        <button className={style.btn} type="submit" tertiary>
+          Crear Actividad
+        </button>
+      </Box>
     </form>
   );
 }
