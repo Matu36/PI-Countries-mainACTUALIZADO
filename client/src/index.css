@@ -1,19 +1,22 @@
 
-
-.video-container {
+.Landingcontainer {
   position: relative;
   width: 100%;
-
+  height: 100vh; 
+  overflow: hidden; 
 }
 
-.video-container video {
+
+.LandingImage {
   width: 100%;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
 }
+
 
 .Ingresar {
   position: absolute;
-  top: 82%;
+  top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
@@ -24,6 +27,7 @@
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 
   
 }
@@ -34,17 +38,8 @@
 } 
 
 
-@media (max-width: 700px) {
-  .Ingresar {
-    padding: 5px 10px;
-    font-size: 10px;
-  
-  }
-
-}
-
-@media (max-width: 600px) {
-.video-container {
+@media (max-width: 730px) {
+.Landingcontainer {
   position: relative;
   width: 100%;
   height: 100vh; 
@@ -52,8 +47,8 @@
 }
 }
 
-@media (max-width: 600px) {
-.video-container video {
+@media (max-width: 730px) {
+.LandingImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
