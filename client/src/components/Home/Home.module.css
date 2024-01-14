@@ -1,9 +1,8 @@
 .container {
-    background-color: whitesmoke;
-    padding: 1rem;
+    
     min-height: 100vh;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  border: 5px solid #ccc;
+  
   max-width: 100%;
 }
 
@@ -65,15 +64,16 @@
 
 .notFound {
     
-    border-radius: 1rem;
+  border-radius: 1rem;
   backdrop-filter: blur(16px) saturate(180%);
   background-color:wheat;
   padding: 1.5rem 1rem;
   text-align: center;
+
 }
 
 .sCircles {
-    display: flex;
+ display: flex;
   position: absolute;
   top: 25px;
   left:500px;

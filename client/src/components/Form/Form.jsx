@@ -14,6 +14,7 @@ import style from "../Form/form.module.css";
 import bbuton from "../../img/BBUTTON.PNG";
 import { Box, Text, Image } from "@chakra-ui/react";
 import { MdArrowBackIos } from "react-icons/md";
+import Turistico from "../../img/Turistico.png";
 
 const validate = (activity, activities = []) => {
   let errors = {};
@@ -159,236 +160,219 @@ export default function Form() {
       <Link to="/home">
         <MdArrowBackIos className={style.bbuton} src={bbuton} alt="ATRAS" />
       </Link>
-
-      <Box
-        flexDirection={{ base: "column", md: "row" }}
-        justifyContent={{ base: "flex-start", md: "center" }}
-        marginTop={{ base: "1rem", md: "0" }}
-        marginLeft={{ base: "1rem", md: "6rem" }}
-        padding="20px"
-      >
-        <Box marginTop="50px">
-          <label className={style.label}>
-            <Text
-              fontSize="20px"
-              fontWeight="extrabold"
-              textShadow="0 0 2px black, 0 0 5px grey"
-              marginBottom="5px"
-            >
-              País
-            </Text>
-            <select
-              className={style.select}
-              name="countries"
-              onChange={handleSelect}
-            >
-              <option value="">Seleccionar País</option>
-              {countries.map((country, index) => (
-                <option key={index} value={country.name}>
-                  {country.name}
-                </option>
-              ))}
-            </select>
-            {errors.countries && (
-              <div className={style.Error}>{errors.countries}</div>
-            )}
-            <div>
-              {activity.countries.map((country, index) => (
-                <div className={style.country} key={index}>
-                  {country}
-                  <img
-                    className={style.trash}
-                    src={trash}
-                    alt="trash"
-                    onClick={() => handleDelete(country)}
-                  />
-                </div>
-              ))}
-            </div>
-          </label>
-        </Box>
-        <div>
-          <label className={style.label}>
-            <Text
-              marginBottom="5px"
-              fontSize="20px"
-              fontWeight="extrabold"
-              textShadow="0 0 2px black, 0 0 5px grey"
-            >
-              Nombre
-            </Text>
-            <input
-              className={style.input}
-              type="text"
-              name="name"
-              value={activity.name}
-              autoComplete="off"
-              placeholder="Nombre de actividad"
-              onChange={handleOnChange}
-            />
-            {errors.name && <div className={style.Error}>{errors.name}</div>}
-          </label>
-        </div>
-        <div>
-          <label className={style.label}>
-            <Text
-              marginBottom="5px"
-              fontSize="20px"
-              fontWeight="extrabold"
-              textShadow="0 0 2px black, 0 0 5px grey"
-            >
-              Duración
-            </Text>
-            <input
-              className={style.input}
-              type="number"
-              name="duration"
-              value={activity.duration}
-              autoComplete="off"
-              placeholder=" en días"
-              onChange={handleOnChange}
-            />
-
-            {errors.duration && (
-              <div className={style.Error}>{errors.duration}</div>
-            )}
-          </label>
-        </div>
-
-        <div>
-          <label className={style.label}>
-            <Text
-              marginBottom="5px"
-              fontSize="20px"
-              fontWeight="extrabold"
-              textShadow="0 0 2px black, 0 0 5px grey"
-            >
-              Dificultad
-            </Text>
-            <div className={style.radio}>
-              <Box
-                color="black"
-                fontSize={{ base: "10px", md: "16px" }}
-                marginBottom="15px"
+      <Box display="flex" marginTop="4rem">
+        <Image src={Turistico} />
+      </Box>
+      <Box display="flex" justifyContent="space-around">
+        <Box
+          flexDirection={{ base: "column", md: "row" }}
+          justifyContent={{ base: "flex-start", md: "center" }}
+          marginTop={{ base: "-2rem", md: "0" }}
+          marginLeft={{ base: "1rem", md: "1rem" }}
+          padding="20px"
+        >
+          <Box marginTop="50px">
+            <label className={style.label}>
+              <Text fontSize="20px" fontWeight="extrabold" marginBottom="5px">
+                País
+              </Text>
+              <select
+                className={style.select}
+                name="countries"
+                onChange={handleSelect}
               >
-                <input
-                  className={style.rinput}
-                  type="radio"
-                  name="difficulty"
-                  value="1"
-                  onChange={handleCheck}
-                />
-                Muy baja
-              </Box>
+                <option value="">Seleccionar País</option>
+                {countries.map((country, index) => (
+                  <option key={index} value={country.name}>
+                    {country.name}
+                  </option>
+                ))}
+              </select>
+              {errors.countries && (
+                <div className={style.Error}>{errors.countries}</div>
+              )}
+              <div>
+                {activity.countries.map((country, index) => (
+                  <div className={style.country} key={index}>
+                    {country}
+                    <img
+                      className={style.trash}
+                      src={trash}
+                      alt="trash"
+                      onClick={() => handleDelete(country)}
+                    />
+                  </div>
+                ))}
+              </div>
+            </label>
+          </Box>
+          <div>
+            <label className={style.label}>
+              <Text marginBottom="5px" fontSize="20px" fontWeight="extrabold">
+                Nombre
+              </Text>
+              <input
+                className={style.input}
+                type="text"
+                name="name"
+                value={activity.name}
+                autoComplete="off"
+                placeholder="Nombre de actividad"
+                onChange={handleOnChange}
+              />
+              {errors.name && <div className={style.Error}>{errors.name}</div>}
+            </label>
+          </div>
+          <div>
+            <label className={style.label}>
+              <Text
+                marginBottom="5px"
+                fontSize="20px"
+                fontWeight="extrabold"
+                textShadow="0 0 2px black, 0 0 5px grey"
+              >
+                Duración
+              </Text>
+              <input
+                className={style.input}
+                type="number"
+                name="duration"
+                value={activity.duration}
+                autoComplete="off"
+                placeholder=" en días"
+                onChange={handleOnChange}
+              />
 
-              <Box color="black" fontSize={{ base: "10px", md: "16px" }}>
-                <input
-                  className={style.rinput}
-                  type="radio"
-                  name="difficulty"
-                  value="2"
-                  onChange={handleCheck}
-                />
-                baja
-              </Box>
-              <Box color="black" fontSize={{ base: "10px", md: "16px" }}>
-                <input
-                  className={style.rinput}
-                  type="radio"
-                  name="difficulty"
-                  value="3"
-                  onChange={handleCheck}
-                />
-                Media
-              </Box>
-              <Box color="black" fontSize={{ base: "10px", md: "16px" }}>
-                <input
-                  className={style.rinput}
-                  type="radio"
-                  name="difficulty"
-                  value="4"
-                  onChange={handleCheck}
-                />
-                alta
-              </Box>
-              <Box color="black" fontSize={{ base: "10px", md: "16px" }}>
-                <input
-                  className={style.rinput}
-                  type="radio"
-                  name="difficulty"
-                  value="5"
-                  onChange={handleCheck}
-                />
-                Muy alta
-              </Box>
-            </div>
-            {errors.difficulty && (
-              <div className={style.Error}>{errors.difficulty}</div>
-            )}
-          </label>
-        </div>
-        <div>
-          <label className={style.label}>
-            <Text
-              marginBottom="5px"
-              fontSize="20px"
-              fontWeight="extrabold"
-              textShadow="0 0 2px black, 0 0 5px grey"
-            >
-              Temporada
-            </Text>
-            <div className={style.radio}>
-              <Box color="black" fontSize={{ base: "10px", md: "16px" }}>
-                <input
-                  className={style.rinput}
-                  type="radio"
-                  name="seasson"
-                  value="Verano"
-                  onChange={handleCheck}
-                />
-                Verano
-              </Box>
-              <Box color="black" fontSize={{ base: "10px", md: "16px" }}>
-                <input
-                  className={style.rinput}
-                  t
-                  type="radio"
-                  name="seasson"
-                  value="Otoño"
-                  onChange={handleCheck}
-                />
-                Otoño
-              </Box>
-              <Box color="black" fontSize={{ base: "10px", md: "16px" }}>
-                <input
-                  className={style.rinput}
-                  type="radio"
-                  name="seasson"
-                  value="Invierno"
-                  onChange={handleCheck}
-                />
-                Invierno
-              </Box>
-              <Box color="black" fontSize={{ base: "10px", md: "16px" }}>
-                <input
-                  className={style.rinput}
-                  type="radio"
-                  name="seasson"
-                  value="Primavera"
-                  onChange={handleCheck}
-                />
-                Primavera
-              </Box>
-            </div>
-            {errors.seasson && (
-              <div className={style.Error}>{errors.seasson}</div>
-            )}
-          </label>
-        </div>
+              {errors.duration && (
+                <div className={style.Error}>{errors.duration}</div>
+              )}
+            </label>
+          </div>
 
-        <button className={style.btn} type="submit" tertiary>
-          Crear Actividad
-        </button>
+          <div>
+            <label className={style.label}>
+              <Text marginBottom="5px" fontSize="20px" fontWeight="extrabold">
+                Dificultad
+              </Text>
+              <div className={style.radio}>
+                <Box
+                  fontSize={{ base: "10px", md: "16px" }}
+                  marginBottom="15px"
+                >
+                  <input
+                    className={style.rinput}
+                    type="radio"
+                    name="difficulty"
+                    value="1"
+                    onChange={handleCheck}
+                  />
+                  Muy baja
+                </Box>
+
+                <Box fontSize={{ base: "10px", md: "16px" }}>
+                  <input
+                    className={style.rinput}
+                    type="radio"
+                    name="difficulty"
+                    value="2"
+                    onChange={handleCheck}
+                  />
+                  baja
+                </Box>
+                <Box fontSize={{ base: "10px", md: "16px" }}>
+                  <input
+                    className={style.rinput}
+                    type="radio"
+                    name="difficulty"
+                    value="3"
+                    onChange={handleCheck}
+                  />
+                  Media
+                </Box>
+                <Box fontSize={{ base: "10px", md: "16px" }}>
+                  <input
+                    className={style.rinput}
+                    type="radio"
+                    name="difficulty"
+                    value="4"
+                    onChange={handleCheck}
+                  />
+                  alta
+                </Box>
+                <Box fontSize={{ base: "10px", md: "16px" }}>
+                  <input
+                    className={style.rinput}
+                    type="radio"
+                    name="difficulty"
+                    value="5"
+                    onChange={handleCheck}
+                  />
+                  Muy alta
+                </Box>
+              </div>
+              {errors.difficulty && (
+                <div className={style.Error}>{errors.difficulty}</div>
+              )}
+            </label>
+          </div>
+          <div>
+            <label className={style.label}>
+              <Text marginBottom="5px" fontSize="20px" fontWeight="extrabold">
+                Temporada
+              </Text>
+              <div className={style.radio}>
+                <Box fontSize={{ base: "10px", md: "16px" }}>
+                  <input
+                    className={style.rinput}
+                    type="radio"
+                    name="seasson"
+                    value="Verano"
+                    onChange={handleCheck}
+                  />
+                  Verano
+                </Box>
+                <Box fontSize={{ base: "10px", md: "16px" }}>
+                  <input
+                    className={style.rinput}
+                    t
+                    type="radio"
+                    name="seasson"
+                    value="Otoño"
+                    onChange={handleCheck}
+                  />
+                  Otoño
+                </Box>
+                <Box fontSize={{ base: "10px", md: "16px" }}>
+                  <input
+                    className={style.rinput}
+                    type="radio"
+                    name="seasson"
+                    value="Invierno"
+                    onChange={handleCheck}
+                  />
+                  Invierno
+                </Box>
+                <Box fontSize={{ base: "10px", md: "16px" }}>
+                  <input
+                    className={style.rinput}
+                    type="radio"
+                    name="seasson"
+                    value="Primavera"
+                    onChange={handleCheck}
+                  />
+                  Primavera
+                </Box>
+              </div>
+              {errors.seasson && (
+                <div className={style.Error}>{errors.seasson}</div>
+              )}
+            </label>
+          </div>
+
+          <button className={style.btn} type="submit" tertiary>
+            Crear Actividad
+          </button>
+        </Box>
       </Box>
     </form>
   );

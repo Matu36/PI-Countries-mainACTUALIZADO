@@ -13,10 +13,10 @@
   }
   
   .spancontain {
-    backdrop-filter: blur(8px) saturate(120%); /* Ajustado para un efecto más suave */
-    background-color: #3498db; /* Azul brillante */
+    backdrop-filter: blur(8px) saturate(120%); 
+    background-color: #3498db; 
     font-weight: bold;
-    color: #fff; /* Texto blanco */
+    color: #fff; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,7 +31,7 @@
   }
   
   .spancontain:hover {
-    background-color: #2980b9; /* Azul más oscuro al hacer hover */
+    background-color: #2980b9; 
   }
   
   .pn {
@@ -40,9 +40,10 @@
     align-items: center;
     margin: 1rem auto;
     width: 100%;
-    background-color: #ecf0f1; /* Gris claro */
+    
     padding: 0.4rem;
     border-radius: 1rem;
+    margin-top: 2rem;
   }
   
   .spanpn {
@@ -54,9 +55,9 @@
   }
   
   .button {
-    backdrop-filter: blur(8px) saturate(120%); /* Ajustado para un efecto más suave */
-    background-color: #e74c3c; /* Rojo */
-    color: #fff; /* Texto blanco */
+    backdrop-filter: blur(8px) saturate(120%); 
+    background-color: #e74c3c;
+    color: #fff; 
     display: flex;
     justify-content: center;
     align-items: center;

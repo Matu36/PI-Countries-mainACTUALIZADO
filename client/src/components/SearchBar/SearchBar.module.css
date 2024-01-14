@@ -2,19 +2,20 @@
   background-color: var(--text-color);
   display: flex;
   align-items: center;
-  padding: 0.5rem 0.2rem;
+  justify-content: center;
+  padding: 1rem 1rem;
   margin: 1rem 0;
   font-size: 0.7em;
-  height: 1.5rem;
+  height: 2.5rem;
   border-radius: 0.75rem;
 }
 
 .inputt {
   border: solid black;
   outline: none;
-  margin-right: 0.5rem;
+  
   width: 50%;
-  height: 2rem;
+  height: 2.3rem;
   border-radius: 0.75rem;
   padding: 12px 10px;
   font-size: 1rem;

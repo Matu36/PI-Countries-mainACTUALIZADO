@@ -13,11 +13,12 @@ import {
 import Country from "../Country/Country";
 import Paged from "../Paged/Paged";
 import Filters from "../Filters/Filters";
-import NavBar from "../NavBar/NavBar";
 import SearchBar from "../SearchBar/SearchBar.jsx";
-import PageNotFound from "../../img/PageNotFound.jpg";
+import PageNotFound from "../../img/notFound.png";
 import { SpinningCircles } from "react-loading-icons";
 import { Button } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import { MdArrowBackIos } from "react-icons/md";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -26,11 +27,11 @@ export default function Home() {
   const [filters, setFilters] = useState(false); // Estado para mostrar u ocultar filtros
   const [, setOrder] = useState(); // Estado para ordenar por nombre o población
 
-  let countriesPerPage = 10;
-  const indexOfLastCountry = page * countriesPerPage - 1; // 1 * 10 - 1 = 9
+  let countriesPerPage = 12;
+  const indexOfLastCountry = page * countriesPerPage; // 1 * 10 - 1 = 9
   const indexOfFirstCountry =
     page === 1
-      ? indexOfLastCountry - (countriesPerPage - 1) // 9 - (10-1) = 0
+      ? indexOfLastCountry - countriesPerPage // 9 - (10-1) = 0
       : indexOfLastCountry - countriesPerPage; // 9 - (10-1) = 0 | 19 - 10 = 9 | 29 - 10 = 19
   const currentCountries = countries.slice(
     // [0,1,2,3,4,5,6,7,8,9]
@@ -86,28 +87,9 @@ export default function Home() {
 
   return (
     <div className={style.container}>
-      <NavBar handleClick={handleClick} />
-      <SearchBar />
-      <div>
-        <Button
-          mt={6}
-          size="md"
-          colorScheme="gray"
-          borderRadius="8px"
-          borderWidth="2px"
-          borderColor="gray.300"
-          marginLeft="60px"
-          bg="white"
-          color="gray.700"
-          _hover={{
-            bg: "gray.100",
-            color: "gray.800",
-          }}
-          onClick={() => setFilters(!filters)}
-        >
-          <span>Filtros</span>
-        </Button>
-      </div>
+      <Link to="/">
+        <MdArrowBackIos className="back" />
+      </Link>
       <div>
         <Button
           mt={6}
@@ -122,24 +104,70 @@ export default function Home() {
             bg: "gray.100",
             color: "gray.800",
           }}
-          marginTop={{ base: "-75px", md: "-338px" }}
-          marginLeft={{ base: "200", md: "400px" }}
+          marginTop={{ base: "10px", md: "10px" }}
+          marginLeft={{ base: "60px", md: "60px" }}
           secondary
           onClick={handleClick}
         >
           <span>Cargar Paises</span>
         </Button>
-      </div>
-      {filters && (
-        <Filters
-          activities={allActivity}
-          handleClick={handleClick}
-          handleOrdered={handleOrdered}
-          handleFilterContinent={handleFilterContinent}
-          handleFilterActivity={handleFilterActivity}
-        />
-      )}
+        <h2 className="Titulo">Países del Mundo</h2>
+        <SearchBar />
+        <div className="botonesHome">
+          <div>
+            <Button
+              mt={6}
+              size="md"
+              colorScheme="gray"
+              borderRadius="8px"
+              borderWidth="2px"
+              borderColor="gray.300"
+              bg="white"
+              color="gray.700"
+              _hover={{
+                bg: "gray.100",
+                color: "gray.800",
+              }}
+              onClick={() => setFilters(!filters)}
+            >
+              <span>Filtros</span>
+            </Button>
+          </div>
 
+          {filters && (
+            <Filters
+              activities={allActivity}
+              handleClick={handleClick}
+              handleOrdered={handleOrdered}
+              handleFilterContinent={handleFilterContinent}
+              handleFilterActivity={handleFilterActivity}
+            />
+          )}
+          <div>
+            <Link className={style.link} to="/create">
+              <Button
+                mt={6}
+                size="md"
+                colorScheme="gray"
+                borderRadius="8px"
+                borderWidth="2px"
+                borderColor="gray.300"
+                marginLeft="1rem"
+                bg="white"
+                color="gray.700"
+                _hover={{
+                  bg: "gray.100",
+                  color: "gray.800",
+                }}
+                title="Crear Actividad"
+                tertiary
+              >
+                <span>Crear Actividad</span>
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
       <div className={style.countries}>
         {loader ? (
           <SpinningCircles className={style.sCircles} />
@@ -160,7 +188,10 @@ export default function Home() {
             </div>
           )
         )}
-        <Paged countriesPerPage={countriesPerPage} />
+
+        {currentCountries.length > 1 && (
+          <Paged countriesPerPage={countriesPerPage} />
+        )}
       </div>
     </div>
   );

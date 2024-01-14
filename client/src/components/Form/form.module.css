@@ -1,20 +1,15 @@
 
 .container {
-  background-color: white;
   display: flex;
   height: 100vh;
   width: 100%;
-  background-image: url("../../img/form.png");
-  background-repeat: no-repeat;
-  position: relative; /* Añadido */
-  background-size: contain; /* Cambiado a contain para mostrar toda la imagen */
-  background-position: center right; /* Centrar la imagen */
-  
-  margin: auto; /* Centrar el contenedor horizontalmente */
+  justify-content: center;
+  padding-bottom: 1rem;
 }
 
 @media (max-width: 600px) {
   .container {
+    display: block;
     position: relative;
     width: 100%;
     height: auto; 
@@ -29,7 +24,7 @@
     top: 20px;
     left: 30px;
   font-size: x-large;
-    color: black;
+    color: white;
 }
 
   @media (max-width: 1000px) {
@@ -58,10 +53,7 @@
 
 .content {
     display: flex;
-  
- 
   margin-left: 0px;
-  margin-top: 50px;
   font-size: medium;
   font-style:initial;
   height: 10%;
@@ -103,11 +95,7 @@
     margin-bottom: 15px;
 }
 
-@media (max-width: 768px) {
-    .input {
-      width: 80%;
-    }
-  }
+
 
 .Error {
     color: lightcoral;
@@ -127,8 +115,8 @@
   font-family: 'Verdana', 'Helvetica', sans-serif;
   font-weight: bold;
   color: #fff; /* Texto blanco */
-  background-color: #3498db; /* Azul */
-  border: 2px solid #2980b9; /* Borde azul más oscuro */
+  background-color: #34495e; /* Gris azulado */
+  border: 2px solid #2c3e50; /* Borde más oscuro */
   width: 200px;
   height: 40px;
   border-radius: 10px;
@@ -136,16 +124,8 @@
 }
 
 .btn:hover {
-  color: #3498db; /* Azul */
-  background-color: #2980b9; /* Azul más oscuro */
-}
-
-@media (max-width: 767px) {
-  .btn {
-    font-size: 12px; /* Ajuste el tamaño de fuente para pantallas más pequeñas */
-    width: 150px; /* Reduzca el ancho para pantallas más pequeñas */
-    height: 30px;
-  }
+  color: #fff; /* Texto blanco */
+  background-color: #2c3e50; /* Gris más oscuro */
 }
 
 

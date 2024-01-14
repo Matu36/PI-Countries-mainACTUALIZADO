@@ -1,4 +1,19 @@
 
+@font-face {
+  font-family: 'Hurricane';
+  src: url("../src/Fonts/Hurricane-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Indie';
+  src: url("../src/Fonts/IndieFlower-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 .Landingcontainer {
   position: relative;
   width: 100%;
@@ -54,3 +69,37 @@
   object-fit: cover;
 }
 }
+
+.Titulo {
+  color: white;
+  display: flex;
+  margin-bottom: 2rem;
+  
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  font-family: 'Hurricane', sans-serif;
+}
+
+@media (max-width: 730px) {
+  .Titulo {
+   font-size: 3rem;
+  }
+  }
+
+
+
+.back {
+  color:white;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 25px;
+}
+
+.botonesHome {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+
