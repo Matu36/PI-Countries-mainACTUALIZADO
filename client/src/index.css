@@ -75,7 +75,7 @@
   color: white;
   display: flex;
   margin-bottom: 2rem;
-  
+  margin-top: 2rem;
   justify-content: center;
   align-items: center;
   font-size: 4rem;
@@ -84,9 +84,15 @@
 
 @media (max-width: 730px) {
   .Titulo {
-   font-size: 3rem;
+   font-size: 5rem;
   }
   }
+
+  @media (max-width: 462px) {
+    .Titulo {
+     font-size: 4rem;
+    }
+    }
 
 
 
@@ -102,5 +108,6 @@
   justify-content: center;
   margin-bottom: 1rem;
 }
+
 
 

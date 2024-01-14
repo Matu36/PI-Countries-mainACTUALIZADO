@@ -173,7 +173,12 @@ export default function Form() {
         >
           <Box marginTop="50px">
             <label className={style.label}>
-              <Text fontSize="20px" fontWeight="extrabold" marginBottom="5px">
+              <Text
+                fontSize="20px"
+                fontWeight="extrabold"
+                marginBottom="5px"
+                color="white"
+              >
                 País
               </Text>
               <select
@@ -208,7 +213,12 @@ export default function Form() {
           </Box>
           <div>
             <label className={style.label}>
-              <Text marginBottom="5px" fontSize="20px" fontWeight="extrabold">
+              <Text
+                marginBottom="5px"
+                fontSize="20px"
+                fontWeight="extrabold"
+                color="white"
+              >
                 Nombre
               </Text>
               <input
@@ -225,7 +235,12 @@ export default function Form() {
           </div>
           <div>
             <label className={style.label}>
-              <Text marginBottom="5px" fontSize="20px" fontWeight="extrabold">
+              <Text
+                marginBottom="5px"
+                fontSize="20px"
+                fontWeight="extrabold"
+                color="white"
+              >
                 Duración
               </Text>
               <input
@@ -246,13 +261,19 @@ export default function Form() {
 
           <div>
             <label className={style.label}>
-              <Text marginBottom="5px" fontSize="20px" fontWeight="extrabold">
+              <Text
+                marginBottom="5px"
+                fontSize="20px"
+                fontWeight="extrabold"
+                color="white"
+              >
                 Dificultad
               </Text>
               <div className={style.radio}>
                 <Box
                   fontSize={{ base: "10px", md: "16px" }}
                   marginBottom="15px"
+                  color="white"
                 >
                   <input
                     className={style.rinput}
@@ -264,7 +285,7 @@ export default function Form() {
                   Muy baja
                 </Box>
 
-                <Box fontSize={{ base: "10px", md: "16px" }}>
+                <Box fontSize={{ base: "10px", md: "16px" }} color="white">
                   <input
                     className={style.rinput}
                     type="radio"
@@ -274,7 +295,7 @@ export default function Form() {
                   />
                   baja
                 </Box>
-                <Box fontSize={{ base: "10px", md: "16px" }}>
+                <Box fontSize={{ base: "10px", md: "16px" }} color="white">
                   <input
                     className={style.rinput}
                     type="radio"
@@ -284,7 +305,7 @@ export default function Form() {
                   />
                   Media
                 </Box>
-                <Box fontSize={{ base: "10px", md: "16px" }}>
+                <Box fontSize={{ base: "10px", md: "16px" }} color="white">
                   <input
                     className={style.rinput}
                     type="radio"
@@ -294,7 +315,7 @@ export default function Form() {
                   />
                   alta
                 </Box>
-                <Box fontSize={{ base: "10px", md: "16px" }}>
+                <Box fontSize={{ base: "10px", md: "16px" }} color="white">
                   <input
                     className={style.rinput}
                     type="radio"
@@ -312,11 +333,16 @@ export default function Form() {
           </div>
           <div>
             <label className={style.label}>
-              <Text marginBottom="5px" fontSize="20px" fontWeight="extrabold">
+              <Text
+                marginBottom="5px"
+                fontSize="20px"
+                fontWeight="extrabold"
+                color="white"
+              >
                 Temporada
               </Text>
               <div className={style.radio}>
-                <Box fontSize={{ base: "10px", md: "16px" }}>
+                <Box fontSize={{ base: "10px", md: "16px" }} color="white">
                   <input
                     className={style.rinput}
                     type="radio"
@@ -326,7 +352,7 @@ export default function Form() {
                   />
                   Verano
                 </Box>
-                <Box fontSize={{ base: "10px", md: "16px" }}>
+                <Box fontSize={{ base: "10px", md: "16px" }} color="white">
                   <input
                     className={style.rinput}
                     t
@@ -337,7 +363,7 @@ export default function Form() {
                   />
                   Otoño
                 </Box>
-                <Box fontSize={{ base: "10px", md: "16px" }}>
+                <Box fontSize={{ base: "10px", md: "16px" }} color="white">
                   <input
                     className={style.rinput}
                     type="radio"
@@ -347,7 +373,7 @@ export default function Form() {
                   />
                   Invierno
                 </Box>
-                <Box fontSize={{ base: "10px", md: "16px" }}>
+                <Box fontSize={{ base: "10px", md: "16px" }} color="white">
                   <input
                     className={style.rinput}
                     type="radio"

@@ -93,7 +93,6 @@ export default function Home() {
       <div>
         <Button
           mt={6}
-          size="md"
           colorScheme="gray"
           borderRadius="8px"
           borderWidth="2px"
@@ -104,17 +103,48 @@ export default function Home() {
             bg: "gray.100",
             color: "gray.800",
           }}
-          marginTop={{ base: "10px", md: "10px" }}
+          marginTop={{ base: "-3rem", md: "10px" }}
           marginLeft={{ base: "60px", md: "60px" }}
           secondary
           onClick={handleClick}
         >
           <span>Cargar Paises</span>
         </Button>
-        <h2 className="Titulo">Países del Mundo</h2>
-        <SearchBar />
-        <div className="botonesHome">
-          <div>
+      </div>
+      <h2 className="Titulo">Países del Mundo</h2>
+      <SearchBar />
+      <div className="botonesHome">
+        <div>
+          <Button
+            mt={6}
+            size="md"
+            colorScheme="gray"
+            borderRadius="8px"
+            borderWidth="2px"
+            borderColor="gray.300"
+            bg="white"
+            color="gray.700"
+            _hover={{
+              bg: "gray.100",
+              color: "gray.800",
+            }}
+            onClick={() => setFilters(!filters)}
+          >
+            <span>Filtros</span>
+          </Button>
+        </div>
+
+        {filters && (
+          <Filters
+            activities={allActivity}
+            handleClick={handleClick}
+            handleOrdered={handleOrdered}
+            handleFilterContinent={handleFilterContinent}
+            handleFilterActivity={handleFilterActivity}
+          />
+        )}
+        <div>
+          <Link className={style.link} to="/create">
             <Button
               mt={6}
               size="md"
@@ -122,52 +152,22 @@ export default function Home() {
               borderRadius="8px"
               borderWidth="2px"
               borderColor="gray.300"
+              marginLeft="1rem"
               bg="white"
               color="gray.700"
               _hover={{
                 bg: "gray.100",
                 color: "gray.800",
               }}
-              onClick={() => setFilters(!filters)}
+              title="Crear Actividad"
+              tertiary
             >
-              <span>Filtros</span>
+              <span>Crear Actividad</span>
             </Button>
-          </div>
-
-          {filters && (
-            <Filters
-              activities={allActivity}
-              handleClick={handleClick}
-              handleOrdered={handleOrdered}
-              handleFilterContinent={handleFilterContinent}
-              handleFilterActivity={handleFilterActivity}
-            />
-          )}
-          <div>
-            <Link className={style.link} to="/create">
-              <Button
-                mt={6}
-                size="md"
-                colorScheme="gray"
-                borderRadius="8px"
-                borderWidth="2px"
-                borderColor="gray.300"
-                marginLeft="1rem"
-                bg="white"
-                color="gray.700"
-                _hover={{
-                  bg: "gray.100",
-                  color: "gray.800",
-                }}
-                title="Crear Actividad"
-                tertiary
-              >
-                <span>Crear Actividad</span>
-              </Button>
-            </Link>
-          </div>
+          </Link>
         </div>
       </div>
+
       <div className={style.countries}>
         {loader ? (
           <SpinningCircles className={style.sCircles} />
