@@ -225,12 +225,7 @@ export default function Form() {
           </div>
           <div>
             <label className={style.label}>
-              <Text
-                marginBottom="5px"
-                fontSize="20px"
-                fontWeight="extrabold"
-                textShadow="0 0 2px black, 0 0 5px grey"
-              >
+              <Text marginBottom="5px" fontSize="20px" fontWeight="extrabold">
                 Duración
               </Text>
               <input
